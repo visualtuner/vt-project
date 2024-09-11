@@ -73,7 +73,7 @@ textarea {
     appearance: none;
 }
 
-a { text-decoration: none; }
+a { text-decoration: none; color: inherit; }
 
 em { font-style: normal; }
 
@@ -103,5 +103,5 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    
+
 }
