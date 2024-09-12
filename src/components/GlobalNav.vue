@@ -9,7 +9,7 @@
                 type="outlined"
                 :weight="300"
                 :grade="0"
-                :size="24"
+                :size="28"
             />
             <p>메뉴명 #1</p>
         </RouterLink>
@@ -19,7 +19,7 @@
                 type="outlined"
                 :weight="300"
                 :grade="0"
-                :size="24"
+                :size="28"
             />
             <p>메뉴명 #2</p>
         </RouterLink>
@@ -39,6 +39,7 @@
         left: 0;
         margin: 0;
         z-index: 1000;
+        box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
     }
     #gnb a {
         flex: 1 0 0;
@@ -49,7 +50,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: center;
         text-align: center;
         -webkit-tap-highlight-color: transparent;
     }
@@ -62,5 +63,6 @@
         color: #555;
         font-size: 11px;
         font-weight: 500;
+        line-height: 16px;
     }
 </style>
