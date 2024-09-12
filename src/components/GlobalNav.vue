@@ -1,12 +1,28 @@
 <script setup>
-
+    import { GSymbol } from 'vue-material-symbols';
 </script>
 <template>
     <nav id="gnb">
         <RouterLink to="/">
+            <GSymbol
+                icon="home"
+                type="outlined"
+                fill
+                :weight="400"
+                :grade="0"
+                :size="24"
+            />
             <p>메뉴명 #1</p>
         </RouterLink>
         <RouterLink to="/about">
+            <GSymbol
+                icon="light"
+                type="outlined"
+                fill
+                :weight="400"
+                :grade="0"
+                :size="24"
+            />
             <p>메뉴명 #2</p>
         </RouterLink>
     </nav>
