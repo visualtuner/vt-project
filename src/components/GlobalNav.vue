@@ -11,17 +11,27 @@
                 :grade="0"
                 :size="28"
             />
-            <p>메뉴명 #1</p>
+            <p>홈</p>
         </RouterLink>
         <RouterLink to="/about">
             <GSymbol
-                icon="light"
+                icon="variable_insert"
                 type="outlined"
                 :weight="300"
                 :grade="0"
                 :size="28"
             />
-            <p>메뉴명 #2</p>
+            <p>인풋</p>
+        </RouterLink>
+        <RouterLink to="/">
+            <GSymbol
+                icon="buttons_alt"
+                type="outlined"
+                :weight="300"
+                :grade="0"
+                :size="28"
+            />
+            <p>버튼</p>
         </RouterLink>
     </nav>
 </template>
