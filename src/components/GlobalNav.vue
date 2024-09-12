@@ -56,6 +56,10 @@
         -webkit-tap-highlight-color: transparent;
     }
 
+    #gnb a .g-symbol {
+        
+    }
+
     #gnb a p {
         color: #555;
         font-size: 11px;
