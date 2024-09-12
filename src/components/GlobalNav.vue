@@ -7,8 +7,7 @@
             <GSymbol
                 icon="home"
                 type="outlined"
-                fill
-                :weight="400"
+                :weight="300"
                 :grade="0"
                 :size="24"
             />
@@ -18,8 +17,7 @@
             <GSymbol
                 icon="light"
                 type="outlined"
-                fill
-                :weight="400"
+                :weight="300"
                 :grade="0"
                 :size="24"
             />
@@ -57,7 +55,7 @@
     }
 
     #gnb a .g-symbol {
-        
+
     }
 
     #gnb a p {
