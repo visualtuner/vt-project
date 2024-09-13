@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "vue": "^3.4.29",
-    "vue-material-symbols": "^1.0.1",
     "vue-router": "^4.3.3"
   },
   "devDependencies": {
