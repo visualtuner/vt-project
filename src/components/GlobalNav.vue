@@ -4,15 +4,15 @@
 <template>
     <nav id="gnb">
         <RouterLink to="/">
-            <Icon type="home" size="32px"/>
+            <Icon type="home" size="32px" weight="300"/>
             <p>홈</p>
         </RouterLink>
         <RouterLink to="/about">
-            <Icon type="money_bag" size="32px"/>
+            <Icon type="money_bag" size="32px" weight="300"/>
             <p>인풋</p>
         </RouterLink>
         <RouterLink to="/">
-            <Icon type="ar_stickers" size="32px"/>
+            <Icon type="ar_stickers" size="32px" weight="300"/>
             <p>버튼</p>
         </RouterLink>
     </nav>
