@@ -77,6 +77,8 @@ a { text-decoration: none; color: inherit; }
 
 em { font-style: normal; }
 
+.material-symbols-outlined:not(:defined) { visibility: hidden; }
+
 body {
     min-height: 100vh;
     color: var(--color-text);
