@@ -112,3 +112,15 @@ body {
     'GRAD' 0,
     'opsz' 24;
 }
+
+
+
+.material-symbols-outlined.size-16 { font-size: 16px; font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 16; }
+.material-symbols-outlined.size-20 { font-size: 20px; font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20; }
+.material-symbols-outlined.size-24 { font-size: 24px; font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+.material-symbols-outlined.size-28 { font-size: 28px; font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 28; }
+.material-symbols-outlined.size-32 { font-size: 32px; font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 32; }
+.material-symbols-outlined.size-36 { font-size: 36px; font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 36; }
+.material-symbols-outlined.size-40 { font-size: 40px; font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 40; }
+.material-symbols-outlined.size-48 { font-size: 48px; font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 48; }
+.material-symbols-outlined.size-56 { font-size: 56px; font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 56; }

@@ -4,15 +4,15 @@
 <template>
     <nav id="gnb">
         <RouterLink to="/">
-            <span class="material-symbols-outlined">home</span>
+            <span class="material-symbols-outlined size-32">home</span>
             <p>홈</p>
         </RouterLink>
         <RouterLink to="/about">
-            <span class="material-symbols-outlined">skull_list</span>
+            <span class="material-symbols-outlined size-32">skull_list</span>
             <p>인풋</p>
         </RouterLink>
         <RouterLink to="/buttons">
-            <span class="material-symbols-outlined">touch_app</span>
+            <span class="material-symbols-outlined size-32">touch_app</span>
             <p>버튼</p>
         </RouterLink>
     </nav>
@@ -55,20 +55,11 @@
     }
 
     #gnb a .material-symbols-outlined {
-        font-size: 32px;
-        font-variation-settings:
-        'FILL' 0,
-        'wght' 200,
-        'GRAD' 0,
-        'opsz' 24;
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 32;
         transition: all 0.2s;
     }
 
     #gnb a.router-link-active .material-symbols-outlined {
-        font-variation-settings:
-        'FILL' 1,
-        'wght' 200,
-        'GRAD' 0,
-        'opsz' 24;
+        font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 32;
     }
 </style>
