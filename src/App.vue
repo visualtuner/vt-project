@@ -2,6 +2,7 @@
     import { RouterLink, RouterView } from 'vue-router'
     import HelloWorld from './components/HelloWorld.vue'
     import GlobalNav from './components/GlobalNav.vue'
+    import VTButton from './components/VTButton.vue'
 </script>
 
 <template>

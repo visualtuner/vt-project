@@ -11,7 +11,7 @@
 
             <p>인풋</p>
         </RouterLink>
-        <RouterLink to="/">
+        <RouterLink to="/buttons">
 
             <p>버튼</p>
         </RouterLink>

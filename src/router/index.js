@@ -19,6 +19,11 @@ const router = createRouter({
 			name: "about",
             component: loadView ('AboutView'),
 		},
+        {
+			path: "/buttons",
+			name: "buttons",
+            component: loadView ('ButtonsView'),
+		},
 	],
 	scrollBehavior(to, from, savedPosition) {
 		if (savedPosition) {
