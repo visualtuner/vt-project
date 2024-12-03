@@ -53,4 +53,22 @@
         font-weight: 500;
         line-height: 16px;
     }
+
+    #gnb a .material-symbols-outlined {
+        font-size: 32px;
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 300,
+        'GRAD' 0,
+        'opsz' 24;
+        transition: all 0.2s;
+    }
+
+    #gnb a.router-link-active .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 1,
+        'wght' 300,
+        'GRAD' 0,
+        'opsz' 24;
+    }
 </style>
