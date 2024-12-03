@@ -8,7 +8,7 @@
             <p>홈</p>
         </RouterLink>
         <RouterLink to="/about">
-            <span class="material-symbols-outlined size-32">skull_list</span>
+            <span class="material-symbols-outlined size-32">edit_square</span>
             <p>인풋</p>
         </RouterLink>
         <RouterLink to="/buttons">
