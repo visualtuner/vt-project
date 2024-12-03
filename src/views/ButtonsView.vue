@@ -2,31 +2,31 @@
     <div>
         <VTButton size="xs" shape="circle" backgroundColor="#fff" labelColor="#28a745" borderColor="#28a745">
             <template #icon>
-                <i class="fas fa-check"></i>
+                <span class="material-symbols-outlined">check</span>
             </template>
             <span class="button-text">XSmall 사이즈</span>
         </VTButton>
         <VTButton tag="RouterLink" to="/about" size="s" shape="circle" backgroundColor="#fff" labelColor="#28a745" borderColor="#28a745">
             <template #icon>
-                <i class="fas fa-check"></i>
+                <span class="material-symbols-outlined">check</span>
             </template>
             <span class="button-text">Small 사이즈</span>
         </VTButton>
         <VTButton shape="circle" backgroundColor="#fff" labelColor="#28a745" borderColor="#28a745">
             <template #icon>
-                <i class="fas fa-check"></i>
+                <span class="material-symbols-outlined">check</span>
             </template>
             <span class="button-text">Medium 사이즈</span>
         </VTButton>
         <VTButton size="l" shape="circle" backgroundColor="#fff" labelColor="#28a745" borderColor="#28a745">
             <template #icon>
-                <i class="fas fa-check"></i>
+                <span class="material-symbols-outlined">check</span>
             </template>
             <span class="button-text">Large 사이즈</span>
         </VTButton>
         <VTButton size="xl" shape="circle" backgroundColor="#fff" labelColor="#28a745" borderColor="#28a745">
             <template #icon>
-                <i class="fas fa-check"></i>
+                <span class="material-symbols-outlined">check</span>
             </template>
             <span class="button-text">XLarge 사이즈</span>
         </VTButton>
@@ -35,7 +35,7 @@
     <div>
         <VTButton tag="a" href="https://m.tstation.com" target="_blank" size="l" shape="circle" backgroundColor="#dc3545" labelColor="#ffffff" borderColor="#dc3545">
             <template #icon>
-                <i class="fas fa-times"></i>
+                <span class="material-symbols-outlined">add</span>
             </template>
             <template #extra>
                 <span class="badge">99</span>
@@ -57,8 +57,6 @@
 </script>
 
 <style scoped>
-    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
-
     .badge {
         display: inline-flex;
         align-items: center;

@@ -4,15 +4,15 @@
 <template>
     <nav id="gnb">
         <RouterLink to="/">
-
+            <span class="material-symbols-outlined">home</span>
             <p>홈</p>
         </RouterLink>
         <RouterLink to="/about">
-
+            <span class="material-symbols-outlined">skull_list</span>
             <p>인풋</p>
         </RouterLink>
         <RouterLink to="/buttons">
-
+            <span class="material-symbols-outlined">touch_app</span>
             <p>버튼</p>
         </RouterLink>
     </nav>
