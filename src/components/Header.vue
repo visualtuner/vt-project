@@ -6,7 +6,7 @@
     <header id="header">
         <VTButton shape="circle" backgroundColor="transparent" labelColor="#181818" borderColor="transparent" @click="$router.back()">
             <template #icon>
-                <span class="material-symbols-outlined size-32">arrow_back</span>
+                <span class="material-symbols-outlined size-28">arrow_back</span>
             </template>
         </VTButton>
         <h1>타이틀</h1>
@@ -32,7 +32,7 @@
 
     #header h1 {
         font-size: 16px;
-        font-weight: 500;
+        font-weight: 700;
         padding: 0;
         margin: 0;
     }
