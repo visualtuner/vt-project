@@ -8,11 +8,11 @@
             <p>홈</p>
         </RouterLink>
         <RouterLink to="/about">
-            <span class="material-symbols-outlined size-32">edit_square</span>
+            <span class="material-symbols-outlined size-32">deployed_code</span>
             <p>인풋</p>
         </RouterLink>
         <RouterLink to="/buttons">
-            <span class="material-symbols-outlined size-32">touch_app</span>
+            <span class="material-symbols-outlined size-32">skull</span>
             <p>버튼</p>
         </RouterLink>
     </nav>
