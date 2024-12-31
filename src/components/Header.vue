@@ -6,7 +6,7 @@
     <header id="header">
         <VTButton shape="circle" backgroundColor="transparent" labelColor="#181818" borderColor="transparent">
             <template #icon>
-                <span class="material-symbols-outlined">arrow_back</span>
+                <span class="material-symbols-outlined size-28">arrow_back</span>
             </template>
         </VTButton>
         <h1>타이틀</h1>
