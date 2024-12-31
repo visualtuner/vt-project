@@ -13,16 +13,19 @@ const router = createRouter({
 			path: "/",
 			name: "home",
 			component: HomeView,
+            meta: { transition: 'slide-left' },
 		},
 		{
 			path: "/about",
 			name: "about",
             component: loadView ('AboutView'),
+            meta: { transition: 'slide-left' },
 		},
         {
 			path: "/buttons",
 			name: "buttons",
             component: loadView ('ButtonsView'),
+            meta: { transition: 'slide-left' },
 		},
 	],
 	scrollBehavior(to, from, savedPosition) {
@@ -33,5 +36,11 @@ const router = createRouter({
 		}
 	},
 });
+
+router.afterEach((to, from) => {
+    const toDepth = to.path.split('/').length
+    const fromDepth = from.path.split('/').length
+    to.meta.transition = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+})
 
 export default router

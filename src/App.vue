@@ -1,12 +1,14 @@
 <script setup>
-    import { RouterLink, RouterView } from 'vue-router'
+    import * as VueRouter from 'vue-router';
     import HelloWorld from './components/HelloWorld.vue'
     import GlobalNav from './components/GlobalNav.vue'
     import VTButton from './components/VTButton.vue'
+
+    
 </script>
 
 <template>
-    <header>
+    <!-- <header>
         <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
         <div class="wrapper">
@@ -17,9 +19,14 @@
                 <RouterLink to="/about">About</RouterLink>
             </nav>
         </div>
-    </header>
+    </header> -->
 
-    <RouterView />
+    <!-- <RouterView /> -->
+    <RouterView v-slot="{ Component, route }">
+        <transition name="slide-fade">
+            <component :is="Component" :key="route.path" />
+        </transition>
+    </RouterView>
 
     <GlobalNav />
 </template>
@@ -58,6 +65,23 @@
 
     nav a:first-of-type {
         border: 0;
+    }
+
+    .slide-fade-enter-active {
+        transition: all 0.4s ease-out;
+    }
+
+    .slide-fade-leave-active {
+        transition: all 0.4s cubic-bezier(1, 0.5, 0.8, 1);
+    }
+
+    .slide-fade-enter-from {
+        transform: translateX(100%) translateZ(0);
+        opacity: 1;
+    }
+    .slide-fade-leave-to {
+        transform: translateX(0) translateZ(0);
+        opacity: 0;
     }
 
     @media (min-width: 1024px) {
