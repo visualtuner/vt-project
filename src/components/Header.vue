@@ -33,7 +33,7 @@
     #header h1 {
         font-size: 16px;
         font-weight: 700;
-        padding: 0;
+        padding: 0 4px;
         margin: 0;
     }
 </style>
