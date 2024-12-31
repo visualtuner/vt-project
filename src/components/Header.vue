@@ -4,7 +4,7 @@
 </script>
 <template>
     <header id="header">
-        <VTButton shape="circle" backgroundColor="transparent" labelColor="#181818" borderColor="transparent">
+        <VTButton shape="circle" backgroundColor="transparent" labelColor="#181818" borderColor="transparent" @click="$router.back()">
             <template #icon>
                 <span class="material-symbols-outlined size-32">arrow_back</span>
             </template>
