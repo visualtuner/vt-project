@@ -72,7 +72,7 @@
     }
 
     .slide-fade-leave-active {
-        transition: all 0.4s cubic-bezier(1, 0.5, 0.8, 1);
+        transition: all 0.4s ease-in;
     }
 
     .slide-fade-enter-from {
@@ -80,8 +80,8 @@
         opacity: 1;
     }
     .slide-fade-leave-to {
-        transform: translateX(0) translateZ(0);
-        opacity: 0;
+        transform: translateX(-50%) translateZ(0);
+        opacity: 1;
     }
 
     @media (min-width: 1024px) {
