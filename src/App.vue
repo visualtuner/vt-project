@@ -2,6 +2,7 @@
     import * as VueRouter from 'vue-router';
     import HelloWorld from './components/HelloWorld.vue'
     import GlobalNav from './components/GlobalNav.vue'
+    import Header from './components/Header.vue'
     import VTButton from './components/VTButton.vue'
 
     
@@ -20,6 +21,8 @@
             </nav>
         </div>
     </header> -->
+
+    <Header />
 
     <!-- <RouterView /> -->
     <RouterView v-slot="{ Component, route }">
