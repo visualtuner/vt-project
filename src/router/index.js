@@ -46,9 +46,7 @@ function setupRouterTransitions(router) {
     });
 
     router.beforeEach((to, from, next) => {
-
         const baseTransition = isBack ? (from.meta.transition || 'slide-fade') : (to.meta.transition || 'slide-fade');
-    
         const finalTransitionName = isBack ? baseTransition + '-reverse' : baseTransition;
 
         to.meta.runtimeTransition = finalTransitionName;
