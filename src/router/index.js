@@ -46,17 +46,11 @@ function setupRouterTransitions(router) {
     });
 
     router.beforeEach((to, from, next) => {
-        // 라우트에 설정된 기본 트랜지션(없으면 slide-fade)
-        //const baseTransition = to.meta.transition || 'slide-fade';
+
         const baseTransition = isBack ? (from.meta.transition || 'slide-fade') : (to.meta.transition || 'slide-fade');
     
-        // 뒤로가기 시에는 baseTransition + '-reverse'
-        const finalTransitionName = isBack
-          ? baseTransition + '-reverse'
-          : baseTransition;
-    
-        //console.log(from.meta.runtimeTransition);
-        // from.meta.runtimeTransition = finalTransitionName;
+        const finalTransitionName = isBack ? baseTransition + '-reverse' : baseTransition;
+
         to.meta.runtimeTransition = finalTransitionName;
     
         next();
