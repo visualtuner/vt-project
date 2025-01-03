@@ -11,7 +11,7 @@
 </script>
 
 <template>
-    <Header />
+    <Header/>
 
     <RouterView v-slot="{ Component, route }">
         <transition :name="route.meta.runtimeTransition">

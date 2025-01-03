@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import { nextTick } from 'vue';
 
 function loadView (view) {
     return () => import(`@/views/${view}.vue`)
