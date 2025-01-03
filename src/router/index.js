@@ -6,8 +6,6 @@ function loadView (view) {
     return () => import(`@/views/${view}.vue`)
 }
 
-
-
 const router = createRouter({
 	// history: createWebHistory(import.meta.env.BASE_URL),
     history: createWebHashHistory(),
@@ -28,7 +26,7 @@ const router = createRouter({
 			path: "/buttons",
 			name: "buttons",
             component: loadView ('ButtonsView'),
-            meta: { transition: 'slide-fade' },
+            meta: { transition: 'slide-up' },
 		},
 	],
 	scrollBehavior(to, from, savedPosition) {
@@ -49,14 +47,16 @@ function setupRouterTransitions(router) {
 
     router.beforeEach((to, from, next) => {
         // 라우트에 설정된 기본 트랜지션(없으면 slide-fade)
-        const baseTransition = to.meta.transition || 'slide-fade';
+        //const baseTransition = to.meta.transition || 'slide-fade';
+        const baseTransition = isBack ? (from.meta.transition || 'slide-fade') : (to.meta.transition || 'slide-fade');
     
         // 뒤로가기 시에는 baseTransition + '-reverse'
         const finalTransitionName = isBack
           ? baseTransition + '-reverse'
           : baseTransition;
     
-        // 원본 meta.transition을 바꾸지 않고, 별도 키에 저장
+        //console.log(from.meta.runtimeTransition);
+        // from.meta.runtimeTransition = finalTransitionName;
         to.meta.runtimeTransition = finalTransitionName;
     
         next();

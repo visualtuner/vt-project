@@ -49,4 +49,31 @@
             transform: translateX(-50%) translateZ(0);
         }
     }
+
+
+    .slide-up-enter-active { animation: slide-up-in 0.4s; z-index: 1; }
+    .slide-up-leave-active { animation: slide-up-out 0.4s; }
+
+    .slide-up-reverse-enter-active { animation: slide-up-out 0.4s reverse; }
+    .slide-up-reverse-leave-active { animation: slide-up-in 0.4s reverse; z-index: 1; }
+
+    @keyframes slide-up-in {
+        0% {
+            transform: translateY(100%) translateZ(0);
+        }
+
+        100% {
+            transform: translateY(0) translateZ(0);
+        }
+    }
+
+    @keyframes slide-up-out {
+        0% {
+            transform: translateY(0) translateZ(0);
+        }
+
+        100% {
+            transform: translateY(0) translateZ(0);
+        }
+    }
 </style>
