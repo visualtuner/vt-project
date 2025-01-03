@@ -1,9 +1,12 @@
 import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import { nextTick } from 'vue';
 
 function loadView (view) {
     return () => import(`@/views/${view}.vue`)
 }
+
+
 
 const router = createRouter({
 	// history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,19 +16,19 @@ const router = createRouter({
 			path: "/",
 			name: "home",
 			component: HomeView,
-            meta: { transition: 'slide-left' },
+            meta: { transition: 'slide-fade' },
 		},
 		{
 			path: "/about",
 			name: "about",
             component: loadView ('AboutView'),
-            meta: { transition: 'slide-left' },
+            meta: { transition: 'slide-fade' },
 		},
         {
 			path: "/buttons",
 			name: "buttons",
             component: loadView ('ButtonsView'),
-            meta: { transition: 'slide-left' },
+            meta: { transition: 'slide-fade' },
 		},
 	],
 	scrollBehavior(to, from, savedPosition) {
@@ -37,10 +40,34 @@ const router = createRouter({
 	},
 });
 
-router.afterEach((to, from) => {
-    const toDepth = to.path.split('/').length
-    const fromDepth = from.path.split('/').length
-    to.meta.transition = toDepth < fromDepth ? 'slide-right' : 'slide-left'
-})
+function setupRouterTransitions(router) {
+    let isBack = false; 
 
-export default router
+    router.options.history.listen((to, from, info) => {
+        isBack = info.direction === 'back';
+    });
+
+    router.beforeEach((to, from, next) => {
+        // 라우트에 설정된 기본 트랜지션(없으면 slide-fade)
+        const baseTransition = to.meta.transition || 'slide-fade';
+    
+        // 뒤로가기 시에는 baseTransition + '-reverse'
+        const finalTransitionName = isBack
+          ? baseTransition + '-reverse'
+          : baseTransition;
+    
+        // 원본 meta.transition을 바꾸지 않고, 별도 키에 저장
+        to.meta.runtimeTransition = finalTransitionName;
+    
+        next();
+      });
+
+    router.afterEach((to, from) => {
+        isBack = false;
+    });
+}
+
+setupRouterTransitions(router);
+
+
+export default router;
