@@ -69,7 +69,7 @@
 
     #gnb a .material-symbols-outlined.more-icon {
         font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 32;
-        -webkit-text-stroke: 1.5px var(--color-text);
+        -webkit-text-stroke: 2px var(--color-text);
         color: transparent;
     }
 
