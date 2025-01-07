@@ -4,19 +4,19 @@
 <template>
     <nav id="gnb">
         <RouterLink to="/">
-            <span class="material-symbols-outlined size-32">home</span>
+            <span class="material-symbols-outlined size-28">home</span>
             <p>홈</p>
         </RouterLink>
         <RouterLink to="/about">
-            <span class="material-symbols-outlined size-32">deployed_code</span>
+            <span class="material-symbols-outlined size-28">deployed_code</span>
             <p>인풋</p>
         </RouterLink>
         <RouterLink to="/buttons">
-            <span class="material-symbols-outlined size-32">skull</span>
+            <span class="material-symbols-outlined size-28">skull</span>
             <p>버튼</p>
         </RouterLink>
         <RouterLink to="/more">
-            <span class="material-symbols-outlined size-32 more-icon">more_horiz</span>
+            <span class="material-symbols-outlined size-28 more-icon">more_horiz</span>
             <p>더보기</p>
         </RouterLink>
     </nav>
@@ -59,22 +59,22 @@
     }
 
     #gnb a .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 32;
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 28;
         transition: all 0.2s;
     }
 
     #gnb a.router-link-active .material-symbols-outlined {
-        font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 32;
+        font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 28;
     }
 
     #gnb a .material-symbols-outlined.more-icon {
-        font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 32;
+        font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 28;
         -webkit-text-stroke: 1.6px var(--color-text);
         color: transparent;
     }
 
     #gnb a.router-link-active .material-symbols-outlined.more-icon {
-        font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 32;
+        font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 28;
         color: var(--color-text);
     }
 </style>
