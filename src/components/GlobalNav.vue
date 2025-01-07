@@ -68,13 +68,14 @@
     }
 
     #gnb a .material-symbols-outlined.more-icon {
-        font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 28;
+        transition: none;
+        font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 32;
         -webkit-text-stroke: 1.6px var(--color-text);
         color: transparent;
     }
 
     #gnb a.router-link-active .material-symbols-outlined.more-icon {
-        font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 28;
+        font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 32;
         color: var(--color-text);
     }
 </style>
