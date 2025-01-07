@@ -27,6 +27,12 @@ const router = createRouter({
             component: loadView ('ButtonsView'),
             meta: { transition: 'slide-up' },
 		},
+        {
+			path: "/more",
+			name: "more",
+            component: loadView ('MoreView'),
+            meta: { transition: 'slide-up' },
+		},
 	],
 	scrollBehavior(to, from, savedPosition) {
 		if (savedPosition) {

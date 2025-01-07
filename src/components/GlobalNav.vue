@@ -15,6 +15,10 @@
             <span class="material-symbols-outlined size-32">skull</span>
             <p>버튼</p>
         </RouterLink>
+        <RouterLink to="/more">
+            <span class="material-symbols-outlined size-32 more-icon">more_horiz</span>
+            <p>더보기</p>
+        </RouterLink>
     </nav>
 </template>
 
@@ -61,5 +65,14 @@
 
     #gnb a.router-link-active .material-symbols-outlined {
         font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 32;
+    }
+
+    #gnb a .material-symbols-outlined.more-icon {
+        font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 32;
+        -webkit-text-stroke: 1.5px var(--color-text);
+    }
+
+    #gnb a.router-link-active .material-symbols-outlined.more-icon {
+        color: transparent;
     }
 </style>
