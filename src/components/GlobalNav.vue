@@ -70,9 +70,11 @@
     #gnb a .material-symbols-outlined.more-icon {
         font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 32;
         -webkit-text-stroke: 1.5px var(--color-text);
+        color: transparent;
     }
 
     #gnb a.router-link-active .material-symbols-outlined.more-icon {
-        color: transparent;
+        font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 32;
+        color: var(--color-text);
     }
 </style>
