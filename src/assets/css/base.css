@@ -117,8 +117,12 @@ body {
     'wght' 300,
     'GRAD' 0,
     'opsz' 24;
+    
 }
 
+.material-symbols-outlined:not(:defined) {
+    visibility: hidden;
+}
 
 
 .material-symbols-outlined.size-16 { font-size: 16px; font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 16; }
