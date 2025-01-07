@@ -1,5 +1,7 @@
 <template>
     <div class="view buttons">
+        <Header :title="pageTitle"></Header>
+
         <h1>This is a buttons page</h1>
 
         <div class="">
@@ -51,14 +53,21 @@
 </template>
 
 <script>
-    import VTButton from '../components/VTButton.vue';
+import Header from '../components/Header.vue';
+import VTButton from '../components/VTButton.vue';
 
-    export default {
-        name: 'ButtonsView',
-        components: {
-            VTButton,
-        },
-    };
+export default {
+    name: 'ButtonsView',
+    components: {
+        VTButton,
+        Header
+    },
+    data() {
+        return {
+            pageTitle: '버튼들'
+        };
+    }
+};
 </script>
 
 <style scoped>

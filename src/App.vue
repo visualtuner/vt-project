@@ -3,16 +3,12 @@
     import * as VueRouter from 'vue-router';
     import HelloWorld from './components/HelloWorld.vue';
     import GlobalNav from './components/GlobalNav.vue';
-    import Header from './components/Header.vue';
     import VTButton from './components/VTButton.vue';
     import { useRoute, useRouter } from 'vue-router';
-
     
 </script>
 
 <template>
-    <Header/>
-
     <RouterView v-slot="{ Component, route }">
         <transition :name="route.meta.runtimeTransition">
             <component :is="Component" :key="route.path" />
@@ -24,11 +20,11 @@
 
 <style scoped>
 
-    .slide-fade-enter-active { animation: slide-fade-in 0.4s; z-index: 1; }
-    .slide-fade-leave-active { animation: slide-fade-out 0.4s; }
+    .slide-fade-enter-active { animation: slide-fade-in 0.3s; z-index: 1; }
+    .slide-fade-leave-active { animation: slide-fade-out 0.3s; }
 
-    .slide-fade-reverse-enter-active { animation: slide-fade-out 0.4s reverse; }
-    .slide-fade-reverse-leave-active { animation: slide-fade-in 0.4s reverse; z-index: 1; }
+    .slide-fade-reverse-enter-active { animation: slide-fade-out 0.3s reverse; }
+    .slide-fade-reverse-leave-active { animation: slide-fade-in 0.3s reverse; z-index: 1; }
 
     @keyframes slide-fade-in {
         0% {
@@ -51,11 +47,11 @@
     }
 
 
-    .slide-up-enter-active { animation: slide-up-in 0.4s; z-index: 1; }
-    .slide-up-leave-active { animation: slide-up-out 0.4s; }
+    .slide-up-enter-active { animation: slide-up-in 0.3s; z-index: 1; }
+    .slide-up-leave-active { animation: slide-up-out 0.3s; }
 
-    .slide-up-reverse-enter-active { animation: slide-up-out 0.4s reverse; }
-    .slide-up-reverse-leave-active { animation: slide-up-in 0.4s reverse; z-index: 1; }
+    .slide-up-reverse-enter-active { animation: slide-up-out 0.3s reverse; }
+    .slide-up-reverse-leave-active { animation: slide-up-in 0.3s reverse; z-index: 1; }
 
     @keyframes slide-up-in {
         0% {
