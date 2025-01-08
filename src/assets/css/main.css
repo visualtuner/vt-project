@@ -15,6 +15,7 @@
 .view {
     width: 100%;
     height: 100%;
+    overflow: auto;
     padding-top: 56px;
     padding-bottom: 56px;
     background: #fff;
@@ -50,6 +51,11 @@
     border: none;
     color: var(--label-color);
     background: var(--bg-color);
+}
+
+.btn-item:is(:disabled, .disabled) {
+    pointer-events: none;
+    opacity: 0.3;
 }
 
 .btn-item:has(.btn-txt) { padding: 0 calc(var(--size) / 2); }

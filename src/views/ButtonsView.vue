@@ -51,6 +51,38 @@
                 <span class="material-symbols-outlined size-28">close</span>
             </ButtonItem>
         </div>
+
+        <div class="btns">
+            <ButtonItem class="btn-shape-round btn-primary">
+                <span class="material-symbols-outlined size-24">arrow_back</span>
+                <span class="btn-txt">버튼 라벨</span>
+            </ButtonItem>
+
+            <ButtonItem class="btn-shape-round btn-primary-ol">
+                <span class="material-symbols-outlined size-24">arrow_back</span>
+                <span class="btn-txt">버튼 라벨</span>
+            </ButtonItem>
+
+            <ButtonItem class="btn-shape-round">
+                <span class="material-symbols-outlined size-24">close</span>
+            </ButtonItem>
+        </div>
+
+        <div class="btns">
+            <ButtonItem class="btn-shape-round btn-primary" disabled>
+                <span class="material-symbols-outlined size-24">arrow_back</span>
+                <span class="btn-txt">버튼 라벨</span>
+            </ButtonItem>
+
+            <ButtonItem class="btn-shape-round btn-primary-ol" disabled>
+                <span class="material-symbols-outlined size-24">arrow_back</span>
+                <span class="btn-txt">버튼 라벨</span>
+            </ButtonItem>
+
+            <ButtonItem class="btn-shape-round" disabled>
+                <span class="material-symbols-outlined size-24">close</span>
+            </ButtonItem>
+        </div>
     </div>
 </template>
 
