@@ -44,6 +44,7 @@
     gap: 8px;
     padding: 0;
     text-decoration: none;
+    user-select: none;
     font-size: 16px;
     overflow: hidden;
     position: relative;
@@ -53,9 +54,18 @@
     background: var(--bg-color);
 }
 
+.btn-item * {
+    user-select: none;
+    pointer-events: none;
+}
+
 .btn-item:is(:disabled, .disabled) {
     pointer-events: none;
     opacity: 0.3;
+}
+
+.btn-item:is(:disabled, .disabled) :is(.btn-txt, .btn-icon) {
+    opacity: 0.8;
 }
 
 .btn-item:has(.btn-txt) { padding: 0 calc(var(--size) / 2); }
