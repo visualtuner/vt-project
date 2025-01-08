@@ -6,17 +6,17 @@
 
         <div class="btns">
             <ButtonItem class="btn-size-s btn-shape-fillet btn-primary">
-                <span class="material-symbols-outlined size-24">arrow_back</span>
+                <span class="material-symbols-outlined size-20">arrow_back</span>
                 <span class="btn-txt">버튼 라벨</span>
             </ButtonItem>
 
             <ButtonItem class="btn-size-s btn-shape-fillet btn-primary-ol">
-                <span class="material-symbols-outlined size-24">arrow_back</span>
+                <span class="material-symbols-outlined size-20">arrow_back</span>
                 <span class="btn-txt">버튼 라벨</span>
             </ButtonItem>
 
             <ButtonItem class="btn-size-s btn-shape-round">
-                <span class="material-symbols-outlined size-28">close</span>
+                <span class="material-symbols-outlined size-20">close</span>
             </ButtonItem>
         </div>
 
@@ -32,18 +32,18 @@
             </ButtonItem>
 
             <ButtonItem class="btn-shape-round">
-                <span class="material-symbols-outlined size-28">close</span>
+                <span class="material-symbols-outlined size-24">close</span>
             </ButtonItem>
         </div>
 
         <div class="btns">
             <ButtonItem class="btn-size-l btn-shape-fillet btn-primary">
-                <span class="material-symbols-outlined size-24">arrow_back</span>
+                <span class="material-symbols-outlined size-28">arrow_back</span>
                 <span class="btn-txt">버튼 라벨</span>
             </ButtonItem>
 
             <ButtonItem class="btn-size-l btn-shape-fillet btn-primary-ol">
-                <span class="material-symbols-outlined size-24">arrow_back</span>
+                <span class="material-symbols-outlined size-28">arrow_back</span>
                 <span class="btn-txt">버튼 라벨</span>
             </ButtonItem>
 
@@ -98,7 +98,7 @@ export default {
         align-items: flex-start;
         justify-content: flex-start;
         gap: 8px;
-        margin-top: 40px;
+        margin-top: 20px;
         padding: 20px;
     }
 </style>
