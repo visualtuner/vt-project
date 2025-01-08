@@ -35,7 +35,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
+    /* :root {
         --color-background: var(--vt-c-black);
         --color-background-soft: var(--vt-c-black-soft);
         --color-background-mute: var(--vt-c-black-mute);
@@ -45,7 +45,7 @@
 
         --color-heading: var(--vt-c-text-dark-1);
         --color-text: var(--vt-c-text-dark-2);
-    }
+    } */
 }
 
 *,
@@ -57,7 +57,10 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-input, textarea { user-select: all; }
+input,
+textarea {
+    user-select: all;
+}
 
 button,
 input,
@@ -71,9 +74,14 @@ textarea {
     appearance: none;
 }
 
-a { text-decoration: none; color: inherit; }
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-em { font-style: normal; }
+em {
+    font-style: normal;
+}
 
 html {
     width: 100%;
@@ -85,50 +93,70 @@ body {
     height: 100%;
     color: var(--color-text);
     background: var(--color-background);
-    transition:
-        color 0.5s,
-        background-color 0.5s;
+    transition: color 0.5s, background-color 0.5s;
     line-height: 1.6;
-    font-family:
-        'Pretendard',
-        Inter,
-        -apple-system,
-        BlinkMacSystemFont,
-        'Segoe UI',
-        Roboto,
-        Oxygen,
-        Ubuntu,
-        Cantarell,
-        'Fira Sans',
-        'Droid Sans',
-        'Helvetica Neue',
-        sans-serif;
+    font-family: 'Pretendard', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     font-size: 15px;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
 }
 
 .material-symbols-outlined {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 300,
-    'GRAD' 0,
-    'opsz' 24;
-    
+    --size: 24px;
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    font-size: var(--size);
+    width: var(--size);
+    height: var(--size);
+    line-height: var(--size);
 }
 
 .material-symbols-outlined:not(:defined) {
     visibility: hidden;
 }
 
-.material-symbols-outlined.size-16 { font-size: 16px; font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 16; }
-.material-symbols-outlined.size-20 { font-size: 20px; font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20; }
-.material-symbols-outlined.size-24 { font-size: 24px; font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-.material-symbols-outlined.size-28 { font-size: 28px; font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 28; }
-.material-symbols-outlined.size-32 { font-size: 32px; font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 32; }
-.material-symbols-outlined.size-36 { font-size: 36px; font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 36; }
-.material-symbols-outlined.size-40 { font-size: 40px; font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 40; }
-.material-symbols-outlined.size-48 { font-size: 48px; font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 48; }
-.material-symbols-outlined.size-56 { font-size: 56px; font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 56; }
+.material-symbols-outlined.size-16 {
+    --size: 16px;
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 16;
+}
+
+.material-symbols-outlined.size-20 {
+    --size: 20px;
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+}
+
+.material-symbols-outlined.size-24 {
+    --size: 24px;
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+
+.material-symbols-outlined.size-28 {
+    --size: 28px;
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 28;
+}
+
+.material-symbols-outlined.size-32 {
+    --size: 32px;
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 32;
+}
+
+.material-symbols-outlined.size-36 {
+    --size: 36px;
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 36;
+}
+
+.material-symbols-outlined.size-40 {
+    --size: 40px;
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 40;
+}
+
+.material-symbols-outlined.size-48 {
+    --size: 48px;
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 48;
+}
+
+.material-symbols-outlined.size-56 {
+    --size: 56px;
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 56;
+}
