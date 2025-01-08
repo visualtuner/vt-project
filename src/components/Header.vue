@@ -15,7 +15,7 @@ export default {
 </script>
 <template>
     <header id="header">
-        <ButtonItem class="btn-shape-round btn-effect-ripple" @click="$router.back()">
+        <ButtonItem class="btn-shape-round" @click="$router.back()">
             <span class="material-symbols-outlined size-28">arrow_back</span>
         </ButtonItem>
         <h1>{{ title }}</h1>

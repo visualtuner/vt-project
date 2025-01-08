@@ -4,14 +4,51 @@
 
         <h1>This is a buttons page</h1>
 
-        <div class="">
-            <ButtonItem class="btn-shape-round btn-effect-ripple">
-                <span class="material-symbols-outlined size-28">arrow_back</span>
+        <div class="btns">
+            <ButtonItem class="btn-size-s btn-shape-fillet btn-primary">
+                <span class="material-symbols-outlined size-24">arrow_back</span>
                 <span class="btn-txt">버튼 라벨</span>
             </ButtonItem>
 
-            <ButtonItem class="btn-shape-round btn-effect-ripple">
-                <span class="material-symbols-outlined size-28">arrow_back</span>
+            <ButtonItem class="btn-size-s btn-shape-fillet btn-primary-ol">
+                <span class="material-symbols-outlined size-24">arrow_back</span>
+                <span class="btn-txt">버튼 라벨</span>
+            </ButtonItem>
+
+            <ButtonItem class="btn-size-s btn-shape-round">
+                <span class="material-symbols-outlined size-28">close</span>
+            </ButtonItem>
+        </div>
+
+        <div class="btns">
+            <ButtonItem class="btn-shape-fillet btn-primary">
+                <span class="material-symbols-outlined size-24">arrow_back</span>
+                <span class="btn-txt">버튼 라벨</span>
+            </ButtonItem>
+
+            <ButtonItem class="btn-shape-fillet btn-primary-ol">
+                <span class="material-symbols-outlined size-24">arrow_back</span>
+                <span class="btn-txt">버튼 라벨</span>
+            </ButtonItem>
+
+            <ButtonItem class="btn-shape-round">
+                <span class="material-symbols-outlined size-28">close</span>
+            </ButtonItem>
+        </div>
+
+        <div class="btns">
+            <ButtonItem class="btn-size-l btn-shape-fillet btn-primary">
+                <span class="material-symbols-outlined size-24">arrow_back</span>
+                <span class="btn-txt">버튼 라벨</span>
+            </ButtonItem>
+
+            <ButtonItem class="btn-size-l btn-shape-fillet btn-primary-ol">
+                <span class="material-symbols-outlined size-24">arrow_back</span>
+                <span class="btn-txt">버튼 라벨</span>
+            </ButtonItem>
+
+            <ButtonItem class="btn-size-l btn-shape-round">
+                <span class="material-symbols-outlined size-28">close</span>
             </ButtonItem>
         </div>
     </div>
@@ -51,5 +88,17 @@ export default {
         position: absolute;
         right: 4px;
         top: 4px;
+    }
+
+    .btns {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 8px;
+        margin-top: 40px;
+        padding: 20px;
     }
 </style>
