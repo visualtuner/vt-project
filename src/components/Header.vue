@@ -1,5 +1,5 @@
 <script>
-import VTButton from '../components/VTButton.vue';
+import ButtonItem from '../components/ButtonItem.vue';
 
 export default {
     props: {
@@ -9,17 +9,15 @@ export default {
         }
     },
     components: {
-        VTButton
+        ButtonItem
     }
 }
 </script>
 <template>
     <header id="header">
-        <VTButton shape="circle" backgroundColor="transparent" labelColor="#181818" borderColor="transparent" @click="$router.back()">
-            <template #icon>
-                <span class="material-symbols-outlined size-28">arrow_back</span>
-            </template>
-        </VTButton>
+        <ButtonItem class="btn-shape-round btn-effect-ripple" @click="$router.back()">
+            <span class="material-symbols-outlined size-28">arrow_back</span>
+        </ButtonItem>
         <h1>{{ title }}</h1>
     </header>
 </template>

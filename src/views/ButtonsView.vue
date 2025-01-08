@@ -5,49 +5,14 @@
         <h1>This is a buttons page</h1>
 
         <div class="">
-            <div>
-                <VTButton size="xs" shape="circle" backgroundColor="#fff" labelColor="#28a745" borderColor="#28a745">
-                    <template #icon>
-                        <span class="material-symbols-outlined">check</span>
-                    </template>
-                    <span class="button-text">XSmall 사이즈</span>
-                </VTButton>
-                <VTButton tag="RouterLink" to="/about" size="s" shape="circle" backgroundColor="#fff" labelColor="#28a745" borderColor="#28a745">
-                    <template #icon>
-                        <span class="material-symbols-outlined">check</span>
-                    </template>
-                    <span class="button-text">Small 사이즈</span>
-                </VTButton>
-                <VTButton shape="circle" backgroundColor="#fff" labelColor="#28a745" borderColor="#28a745">
-                    <template #icon>
-                        <span class="material-symbols-outlined">check</span>
-                    </template>
-                    <span class="button-text">Medium 사이즈</span>
-                </VTButton>
-                <VTButton size="l" shape="circle" backgroundColor="#fff" labelColor="#28a745" borderColor="#28a745">
-                    <template #icon>
-                        <span class="material-symbols-outlined">check</span>
-                    </template>
-                    <span class="button-text">Large 사이즈</span>
-                </VTButton>
-                <VTButton size="xl" shape="circle" backgroundColor="#fff" labelColor="#28a745" borderColor="#28a745">
-                    <template #icon>
-                        <span class="material-symbols-outlined">check</span>
-                    </template>
-                    <span class="button-text">XLarge 사이즈</span>
-                </VTButton>
-            </div>
+            <ButtonItem class="btn-shape-round btn-effect-ripple">
+                <span class="material-symbols-outlined size-28">arrow_back</span>
+                <span class="btn-txt">버튼 라벨</span>
+            </ButtonItem>
 
-            <div>
-                <VTButton tag="a" href="https://m.tstation.com" target="_blank" size="l" shape="circle" backgroundColor="#dc3545" labelColor="#ffffff" borderColor="#dc3545">
-                    <template #icon>
-                        <span class="material-symbols-outlined">add</span>
-                    </template>
-                    <template #extra>
-                        <span class="badge">99</span>
-                    </template>
-                </VTButton>
-            </div>
+            <ButtonItem class="btn-shape-round btn-effect-ripple">
+                <span class="material-symbols-outlined size-28">arrow_back</span>
+            </ButtonItem>
         </div>
     </div>
 </template>
@@ -55,12 +20,14 @@
 <script>
 import Header from '../components/Header.vue';
 import VTButton from '../components/VTButton.vue';
+import ButtonItem from '../components/ButtonItem.vue';
 
 export default {
     name: 'ButtonsView',
     components: {
         VTButton,
-        Header
+        Header,
+        ButtonItem
     },
     data() {
         return {
