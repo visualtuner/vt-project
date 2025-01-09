@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import AboutView from '../views/AboutView.vue'
+import ButtonsView from '../views/ButtonsView.vue'
 
 function loadView (view) {
     return () => import(/* webpackPrefetch: true */ `@/views/${view}.vue`)
@@ -18,13 +20,13 @@ const router = createRouter({
 		{
 			path: "/about",
 			name: "about",
-            component: loadView ('AboutView'),
+			component: AboutView,
             meta: { transition: 'slide-fade' },
 		},
         {
 			path: "/buttons",
 			name: "buttons",
-            component: loadView ('ButtonsView'),
+			component: ButtonsView,
             meta: { transition: 'slide-up' },
 		},
         {
