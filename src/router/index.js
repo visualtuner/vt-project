@@ -2,7 +2,7 @@ import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router
 import HomeView from '../views/HomeView.vue'
 
 function loadView (view) {
-    return () => import(`@/views/${view}.vue`)
+    return () => import(/* webpackPrefetch: true */ `@/views/${view}.vue`)
 }
 
 const router = createRouter({

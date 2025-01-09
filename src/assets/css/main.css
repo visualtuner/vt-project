@@ -131,7 +131,7 @@
     --bg-color: var(--vt-c-primary);
     --border-color: transparent;
     --label-color: var(--vt-c-white);
-    --shading-color: rgba(255, 255, 255, 0.2);
+    --shading-color: rgba(255, 255, 255, 0.25);
 }
 
 .btn-primary-ol {
