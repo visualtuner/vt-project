@@ -4,7 +4,7 @@ import AboutView from '../views/AboutView.vue'
 import ButtonsView from '../views/ButtonsView.vue'
 
 function loadView (view) {
-    return () => import(/* webpackPrefetch: true */ `@/views/${view}.vue`)
+    return () => import(`@/views/${view}.vue`)
 }
 
 const router = createRouter({
@@ -40,7 +40,7 @@ const router = createRouter({
 		if (savedPosition) {
 			return savedPosition;
 		} else {
-			return { x: 0, y: 0 };
+			return { top: 0 };
 		}
 	},
 });

@@ -88,13 +88,11 @@
 
 <script>
 import Header from '../components/Header.vue';
-import VTButton from '../components/VTButton.vue';
 import ButtonItem from '../components/ButtonItem.vue';
 
 export default {
     name: 'ButtonsView',
     components: {
-        VTButton,
         Header,
         ButtonItem
     },

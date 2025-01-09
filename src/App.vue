@@ -1,9 +1,7 @@
 <script setup>
     import { ref, watch } from 'vue';
     import * as VueRouter from 'vue-router';
-    import HelloWorld from './components/HelloWorld.vue';
     import GlobalNav from './components/GlobalNav.vue';
-    import VTButton from './components/VTButton.vue';
     import { useRoute, useRouter } from 'vue-router';
     
 </script>
