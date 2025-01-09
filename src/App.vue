@@ -9,7 +9,7 @@
 <template>
     <RouterView v-slot="{ Component, route }">
         <transition :name="route.meta.runtimeTransition">
-            <component :is="Component" :key="route.path" />
+            <component :is="Component || null" :key="route.path" />
         </transition>
     </RouterView>
 

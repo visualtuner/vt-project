@@ -1,25 +1,25 @@
 <template>
     <div class="view">
         <Header :title="pageTitle"></Header>
-        <AsyncContent />
-        <!-- <HomeContent /> -->
+        <Suspense>
+            <template #default>
+                <AsyncContent />
+            </template>
+            <template #fallback>
+                <LoaderItem />
+            </template>
+        </Suspense>
     </div>
 </template>
 
 <script>
 import Header from '../components/Header.vue';
 import LoaderItem from "../components/LoaderItem.vue";
-// import HomeContent from "@/components/HomeContent.vue";
-// const AsyncContent = () => import("@/components/HomeContent.vue");
-const AsyncContent = () =>
-  import("@/components/HomeContent.vue")
-    .then((module) => {
-      console.log("HomeContent loaded successfully", module);
-      return module;
-    })
-    .catch((error) => {
-      console.error("Error loading HomeContent", error);
-    });
+import { defineAsyncComponent } from 'vue'
+//const AsyncContent = () => import("@/components/HomeContent.vue");
+const AsyncContent = defineAsyncComponent(() =>
+    import('@/components/HomeContent.vue')
+)
 
 export default {
     components: {
