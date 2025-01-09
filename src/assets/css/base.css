@@ -105,6 +105,11 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+:is(html, body)::-webkit-scrollbar {
+    display: none !important;
+    opacity: 0 !important;
+}
+
 .material-symbols-outlined {
     --size: 24px;
     font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
