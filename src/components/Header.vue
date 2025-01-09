@@ -31,8 +31,9 @@ export default {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    position: sticky;
-    position: -webkit-sticky;
+    /* position: sticky;
+    position: -webkit-sticky; */
+    position: fixed;
     top: 0;
     left: 0;
     margin: 0;
