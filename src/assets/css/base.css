@@ -106,8 +106,10 @@ body {
 }
 
 :is(html, body)::-webkit-scrollbar {
+    -webkit-appearance: none !important;
     display: none !important;
     opacity: 0 !important;
+    background: transparent !important; 
 }
 
 .material-symbols-outlined {

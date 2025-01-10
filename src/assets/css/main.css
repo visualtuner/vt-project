@@ -13,8 +13,10 @@
 }
 
 #app::-webkit-scrollbar {
+    -webkit-appearance: none !important;
     display: none !important;
     opacity: 0 !important;
+    background: transparent !important; 
 }
 
 .view {
@@ -31,7 +33,7 @@
 }
 
 .view::-webkit-scrollbar {
-    -webkit-appearance: none;
+    -webkit-appearance: none !important;
     display: none !important;
     opacity: 0 !important;
     background: transparent !important; 
