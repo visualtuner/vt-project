@@ -1,6 +1,6 @@
 <template>
     <div class="view about">
-        <Header :title="pageTitle"></Header>
+        <Header :title="pageTitle" :isRoot="true"></Header>
         <div class="content-container">
             <Suspense>
                 <template #default>
@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import Header from '../components/Header.vue';
-import LoaderItem from "../components/LoaderItem.vue";
+import Header from '@/components/Header.vue';
+import LoaderItem from "@/components/LoaderItem.vue";
 import { defineAsyncComponent } from 'vue'
 const AsyncContent = defineAsyncComponent(() =>
     import('@/components/AboutContent.vue')

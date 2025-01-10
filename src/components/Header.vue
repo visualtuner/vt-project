@@ -6,7 +6,12 @@ export default {
         title: {
             type: String,
             required: false,
-        }
+        },
+        isRoot: {
+            type: Boolean,
+            required: false,
+            default: false,
+        },
     },
     components: {
         ButtonItem
@@ -14,8 +19,8 @@ export default {
 }
 </script>
 <template>
-    <header id="header">
-        <ButtonItem class="btn-shape-round" @click="$router.back()">
+    <header id="header" :class="{ 'is-root': isRoot }">
+        <ButtonItem v-if="!isRoot" class="btn-shape-round" @click="$router.back()">
             <span class="material-symbols-outlined btn-icon size-28">arrow_back</span>
         </ButtonItem>
         <h1>{{ title }}</h1>
@@ -44,5 +49,12 @@ export default {
     font-weight: 700;
     padding: 0 4px;
     margin: 0;
+}
+
+#header.is-root { box-shadow: none; }
+
+#header.is-root h1 {
+    font-size: 18px;
+    padding-left: 12px;
 }
 </style>
