@@ -1,5 +1,5 @@
 <script>
-import ButtonItem from '../components/ButtonItem.vue';
+import ButtonItem from '@/components/ButtonItem.vue';
 
 export default {
     props: {
