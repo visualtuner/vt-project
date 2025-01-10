@@ -1,6 +1,6 @@
 <template>
     <div class="view more">
-        <Header :title="pageTitle" :isRoot="true"></Header>
+        <Header :title="pageTitle" :isRoot="true" class="transform-header"></Header>
         <div class="content-container">
             <Suspense>
                 <template #default>
