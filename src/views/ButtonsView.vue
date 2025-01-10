@@ -41,7 +41,7 @@ export default {
         const container = this.getScrollContainer();
         if (container) {
             //TODO: pinia 상태값으로 변경
-            window.localStorage.setItem(this.scrollPosName, container.scrollTop);
+            window.sessionStorage.setItem(this.scrollPosName, container.scrollTop);
         }
         next();
     },
@@ -50,7 +50,7 @@ export default {
             vm.$nextTick(() => {
                 const container = this.getScrollContainer();
                 //TODO: pinia 상태값으로 변경
-                let lastScrollPos = window.localStorage.getItem(this.scrollPosName);
+                let lastScrollPos = window.sessionStorage.getItem(this.scrollPosName);
 
                 if (container) {
                     container.scrollTo(0, lastScrollPos);
