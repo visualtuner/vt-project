@@ -74,7 +74,7 @@ export default {
     margin: 0;
     z-index: 900;
     box-shadow: 0 0 0 1px rgba(0,0,0,0.06);
-    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    transition: box-shadow 0.3s ease;
 }
 
 #header h1 {
