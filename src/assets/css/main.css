@@ -31,24 +31,10 @@
 }
 
 .view::-webkit-scrollbar {
+    -webkit-appearance: none;
     display: none !important;
     opacity: 0 !important;
     background: transparent !important; 
-}
-
-.view::-webkit-scrollbar-track {
-    opacity: 0 !important;
-    background: transparent !important;
-}
-
-.view::-webkit-scrollbar-thumb {
-    opacity: 0 !important;
-    background: transparent !important;
-}
-
-.view::-webkit-scrollbar-thumb:hover {
-    opacity: 0 !important;
-    background: transparent !important;
 }
 
 .content {
