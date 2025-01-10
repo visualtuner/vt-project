@@ -16,7 +16,6 @@
 import Header from '../components/Header.vue';
 import LoaderItem from "../components/LoaderItem.vue";
 import { defineAsyncComponent } from 'vue'
-//const AsyncContent = () => import("@/components/HomeContent.vue");
 const AsyncContent = defineAsyncComponent(() =>
     import('@/components/HomeContent.vue')
 )
@@ -26,13 +25,11 @@ export default {
         Header,
         AsyncContent,
         LoaderItem,
-        // HomeContent
     },
     data() {
         return {
-            scrollPosition: 0,
             pageTitle: '홈',
-            contentLoaded: false,
+            scrollPosName: 'homeScrollPos',
         };
     },
     methods: {
@@ -44,7 +41,7 @@ export default {
         const container = this.getScrollContainer();
         if (container) {
             //TODO: pinia 상태값으로 변경
-            window.localStorage.setItem("homeScrollPos", container.scrollTop);
+            window.localStorage.setItem(this.scrollPosName, container.scrollTop);
         }
         next();
     },
@@ -53,7 +50,7 @@ export default {
             vm.$nextTick(() => {
                 const container = this.getScrollContainer();
                 //TODO: pinia 상태값으로 변경
-                let lastScrollPos = window.localStorage.getItem("homeScrollPos");
+                let lastScrollPos = window.localStorage.getItem(this.scrollPosName);
 
                 if (container) {
                     container.scrollTo(0, lastScrollPos);

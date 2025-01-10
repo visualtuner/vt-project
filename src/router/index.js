@@ -2,6 +2,7 @@ import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import ButtonsView from '../views/ButtonsView.vue'
+import MoreView from '../views/MoreView.vue'
 
 function loadView (view) {
     return () => import(`@/views/${view}.vue`)
@@ -32,9 +33,15 @@ const router = createRouter({
         {
 			path: "/more",
 			name: "more",
-            component: loadView ('MoreView'),
+            component: MoreView,
             meta: { transition: 'slide-up' },
 		},
+        /*{
+			path: "/more",
+			name: "more",
+            component: loadView ('MoreView'),
+            meta: { transition: 'slide-up' },
+		},*/
 	],
 	scrollBehavior(to, from, savedPosition) {
 		if (savedPosition) {
