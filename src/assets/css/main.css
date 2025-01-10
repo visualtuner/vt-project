@@ -10,6 +10,7 @@
     font-weight: normal;
     position: relative;
     overflow: hidden;
+    scrollbar-width: none;
 }
 
 #app::-webkit-scrollbar {
