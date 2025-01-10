@@ -1,14 +1,16 @@
 <template>
     <div class="view buttons">
         <Header :title="pageTitle"></Header>
-        <Suspense>
-            <template #default>
-                <AsyncContent />
-            </template>
-            <template #fallback>
-                <LoaderItem />
-            </template>
-        </Suspense>
+        <div class="content-container">
+            <Suspense>
+                <template #default>
+                    <AsyncContent />
+                </template>
+                <template #fallback>
+                    <LoaderItem />
+                </template>
+            </Suspense>
+        </div>
     </div>
 </template>
 
@@ -34,7 +36,7 @@ export default {
     },
     methods: {
         getScrollContainer() {
-            return this.$el.querySelector('.view') || this.$el;
+            return this.$el.querySelector('.content-container');
         },
     },
     beforeRouteLeave(to, from, next) {

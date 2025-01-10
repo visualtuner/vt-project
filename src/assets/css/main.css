@@ -2,28 +2,24 @@
 @import './font/Pretendard/pretendardvariable.css';
 
 #app {
+    display: block;
     width: 100%;
     height: 100%;
-    max-width: 1280px;
     margin: 0;
     padding: 0;
     font-weight: normal;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
     overflow: hidden;
     scrollbar-width: none;
 }
 
-#app::-webkit-scrollbar {
-    -webkit-appearance: none !important;
-    display: none !important;
-    opacity: 0 !important;
-    background: transparent !important; 
-}
-
 .view {
+    display: block;
     width: 100%;
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
     scrollbar-width: none;
     padding-bottom: 56px;
     background: #fff;
@@ -33,7 +29,17 @@
     box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
 }
 
-.view::-webkit-scrollbar {
+.content-container {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    scrollbar-width: none;
+    padding-top: 56px;
+    position: relative;
+}
+
+.content-container::-webkit-scrollbar {
     -webkit-appearance: none !important;
     display: none !important;
     opacity: 0 !important;
@@ -46,6 +52,7 @@
     position: relative;
     padding: 20px;
 }
+
 
 .loader-item {
     position: absolute;
