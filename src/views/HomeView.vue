@@ -30,15 +30,37 @@ export default {
     },
     data() {
         return {
-            pageTitle: '홈'
+            scrollPosition: 0,
+            pageTitle: '홈',
+            contentLoaded: false,
         };
     },
-    mounted() {
-        // Suspense 관련 문제를 디버깅하려면 DOM 상태를 확인
-        console.log('HomeView mounted');
+    methods: {
+        getScrollContainer() {
+            return this.$el.querySelector('.view') || this.$el;
+        },
     },
-    unmounted() {
-        console.log("HomeView unmounted");
+    beforeRouteLeave(to, from, next) {
+        const container = this.getScrollContainer();
+        if (container) {
+            //TODO: pinia 상태값으로 변경
+            window.localStorage.setItem("homeScrollPos", container.scrollTop);
+        }
+        next();
     },
+    beforeRouteEnter(to, from, next) {
+        next(vm => {
+            vm.$nextTick(() => {
+                const container = this.getScrollContainer();
+                //TODO: pinia 상태값으로 변경
+                let lastScrollPos = window.localStorage.getItem("homeScrollPos");
+
+                if (container) {
+                    container.scrollTo(0, lastScrollPos);
+                }
+            });
+        });
+    },
+
 };
 </script>
