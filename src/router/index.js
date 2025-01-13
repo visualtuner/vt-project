@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
+import ComponentsView from '../views/ComponentsView.vue'
 import ButtonsView from '../views/ButtonsView.vue'
 import MoreView from '../views/MoreView.vue'
 
@@ -25,16 +26,35 @@ const router = createRouter({
             meta: { transition: 'no-transition' },
 		},
         {
-			path: "/buttons",
-			name: "buttons",
-			component: ButtonsView,
-            meta: { transition: 'no-transition' },
+			path: "/components",
+			// name: "components",
+			// component: ComponentsView,
+            // meta: { transition: 'no-transition' },
+            children: [
+                {
+                    path: "",
+                    component: ComponentsView,
+                    meta: { transition: 'no-transition' },
+                },
+                {
+                    path: "buttons",
+                    // name: "buttons",
+                    component: ButtonsView,
+                    meta: { transition: 'slide-up' },
+                },
+            ],
 		},
         {
 			path: "/more",
 			name: "more",
             component: MoreView,
             meta: { transition: 'no-transition' },
+		},
+        {
+			path: "/components/buttons",
+			name: "buttons",
+			component: ButtonsView,
+            meta: { transition: 'slide-up' },
 		},
         /*{
 			path: "/more",

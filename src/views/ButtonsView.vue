@@ -1,6 +1,6 @@
 <template>
     <div class="view buttons">
-        <Header :title="pageTitle" :isRoot="true" class="transform-header"></Header>
+        <Header :title="pageTitle" class="transform-header"></Header>
         <div class="content-container">
             <Suspense>
                 <template #default>
@@ -36,7 +36,7 @@ export default {
     },
     methods: {
         getScrollContainer() {
-            return this.$el.querySelector('.content-container');
+            return this.$el ? this.$el.querySelector('.content-container') : null;
         },
     },
     beforeRouteLeave(to, from, next) {
@@ -50,11 +50,10 @@ export default {
     beforeRouteEnter(to, from, next) {
         next(vm => {
             vm.$nextTick(() => {
-                const container = this.getScrollContainer();
-                //TODO: pinia 상태값으로 변경
-                let lastScrollPos = window.sessionStorage.getItem(this.scrollPosName);
-
+                const container = vm.getScrollContainer(); // vm을 사용하여 호출
                 if (container) {
+                    //TODO: pinia 상태값으로 변경
+                    let lastScrollPos = parseInt(window.sessionStorage.getItem(vm.scrollPosName), 10) || 0;
                     container.scrollTo(0, lastScrollPos);
                 }
             });

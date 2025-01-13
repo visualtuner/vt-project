@@ -1,5 +1,5 @@
 <template>
-    <div class="view more">
+    <div class="view">
         <Header :title="pageTitle" :isRoot="true" class="transform-header"></Header>
         <div class="content-container">
             <Suspense>
@@ -11,6 +11,8 @@
                 </template>
             </Suspense>
         </div>
+
+        
     </div>
 </template>
 
@@ -19,7 +21,7 @@ import Header from '@/components/Header.vue';
 import LoaderItem from "@/components/LoaderItem.vue";
 import { defineAsyncComponent } from 'vue'
 const AsyncContent = defineAsyncComponent(() =>
-    import('@/components/MoreContent.vue')
+    import('@/components/ComponentsContent.vue')
 )
 
 export default {
@@ -30,8 +32,8 @@ export default {
     },
     data() {
         return {
-            pageTitle: '더보기',
-            scrollPosName: 'moreScrollPos',
+            pageTitle: '컴포넌트',
+            scrollPosName: 'componentsScrollPos',
         };
     },
     methods: {

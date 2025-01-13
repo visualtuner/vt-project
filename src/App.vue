@@ -18,7 +18,7 @@
     <GlobalNav/>
 </template>
 
-<style scoped>
+<style>
 
     .slide-fade-enter-active { animation: slide-fade-in 0.3s; z-index: 1; }
     .slide-fade-leave-active { animation: slide-fade-out 0.3s; }
@@ -27,23 +27,13 @@
     .slide-fade-reverse-leave-active { animation: slide-fade-in 0.3s reverse; z-index: 1; }
 
     @keyframes slide-fade-in {
-        0% {
-            transform: translateX(100%) translateZ(0);
-        }
-
-        100% {
-            transform: translateX(0) translateZ(0);
-        }
+        0% { transform: translateX(100%) translateZ(0); }
+        100% { transform: translateX(0) translateZ(0); }
     }
 
     @keyframes slide-fade-out {
-        0% {
-            transform: translateX(0) translateZ(0);
-        }
-
-        100% {
-            transform: translateX(-50%) translateZ(0);
-        }
+        0% { transform: translateX(0) translateZ(0); }
+        100% { transform: translateX(-50%) translateZ(0);  }
     }
 
 
@@ -54,22 +44,12 @@
     .slide-up-reverse-leave-active { animation: slide-up-in 0.3s reverse; z-index: 1; }
 
     @keyframes slide-up-in {
-        0% {
-            transform: translateY(100%) translateZ(0);
-        }
-
-        100% {
-            transform: translateY(0) translateZ(0);
-        }
+        0% { transform: translateY(100%) translateZ(0); }
+        100% { transform: translateY(0) translateZ(0); }
     }
 
     @keyframes slide-up-out {
-        0% {
-            transform: translateY(0) translateZ(0);
-        }
-
-        100% {
-            transform: translateY(0) translateZ(0);
-        }
+        0% { transform: translateY(0) translateZ(0); }
+        100% { transform: translateY(0) translateZ(0); }
     }
 </style>

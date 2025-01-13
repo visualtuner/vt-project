@@ -11,9 +11,9 @@
             <span class="material-symbols-outlined size-28">deployed_code</span>
             <p>인풋</p>
         </RouterLink>
-        <RouterLink to="/buttons">
+        <RouterLink to="/components">
             <span class="material-symbols-outlined size-28">skull</span>
-            <p>버튼</p>
+            <p>컴포넌트</p>
         </RouterLink>
         <RouterLink to="/more">
             <span class="material-symbols-outlined size-28 more-icon">more_horiz</span>
@@ -34,7 +34,7 @@
         bottom: 0;
         left: 0;
         margin: 0;
-        z-index: 1000;
+        z-index: 100;
         box-shadow: 0 0 0 1px rgba(0,0,0,0.06);
     }
     #gnb a {

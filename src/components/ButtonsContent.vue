@@ -9,11 +9,11 @@
             </ButtonItem>
 
             <ButtonItem class="btn-size-s btn-shape-fillet btn-primary-ol">
-                <span class="material-symbols-outlined btn-icon size-20">arrow_back</span>
                 <span class="btn-txt">버튼 라벨</span>
+                <span class="material-symbols-outlined btn-icon size-20">arrow_forward</span>
             </ButtonItem>
 
-            <ButtonItem class="btn-size-s btn-shape-round">
+            <ButtonItem class="btn-size-s btn-shape-fillet">
                 <span class="material-symbols-outlined btn-icon size-20">close</span>
             </ButtonItem>
         </div>
@@ -25,11 +25,11 @@
             </ButtonItem>
 
             <ButtonItem class="btn-shape-fillet btn-primary-ol">
-                <span class="material-symbols-outlined btn-icon size-24">arrow_back</span>
                 <span class="btn-txt">버튼 라벨</span>
+                <span class="material-symbols-outlined btn-icon size-24">arrow_forward</span>
             </ButtonItem>
 
-            <ButtonItem class="btn-shape-round">
+            <ButtonItem class="btn-shape-fillet">
                 <span class="material-symbols-outlined btn-icon size-24">close</span>
             </ButtonItem>
         </div>
@@ -41,11 +41,11 @@
             </ButtonItem>
 
             <ButtonItem class="btn-size-l btn-shape-fillet btn-primary-ol">
-                <span class="material-symbols-outlined btn-icon size-28">arrow_back</span>
                 <span class="btn-txt">버튼 라벨</span>
+                <span class="material-symbols-outlined btn-icon size-28">arrow_forward</span>
             </ButtonItem>
 
-            <ButtonItem class="btn-size-l btn-shape-round">
+            <ButtonItem class="btn-size-l btn-shape-fillet">
                 <span class="material-symbols-outlined btn-icon size-28">close</span>
             </ButtonItem>
         </div>

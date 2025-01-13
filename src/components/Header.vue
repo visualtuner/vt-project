@@ -16,6 +16,11 @@ export default {
     components: {
         ButtonItem
     },
+    data() {
+        return {
+            transformPoint: 60,
+        };
+    },
     mounted() {
         const contentContainer = this.$el.nextElementSibling;
         if (contentContainer && contentContainer.classList.contains('content-container')) {
@@ -33,16 +38,14 @@ export default {
             const contentContainer = event.target;
             const scrollTop = contentContainer.scrollTop;
 
-            // Add or remove "scrolled" class based on scrollTop > 20
-            if (scrollTop > 20) {
+            if (scrollTop > 0) {
                 this.$el.classList.add('scrolled');
             } else {
                 this.$el.classList.remove('scrolled');
             }
 
-            // Handle background opacity mapping when "transform-header" class is present
             if (this.$el.classList.contains('transform-header')) {
-                const maxScroll = 60;
+                const maxScroll = this.transformPoint;
                 const opacity = Math.min(scrollTop / maxScroll, 1);
                 this.$el.style.backgroundColor = `rgba(255, 255, 255, ${opacity})`;
             }
