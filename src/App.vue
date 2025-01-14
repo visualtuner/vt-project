@@ -19,7 +19,6 @@
 </template>
 
 <style>
-
     .slide-fade-enter-active { animation: slide-fade-in 0.3s; z-index: 1; }
     .slide-fade-leave-active { animation: slide-fade-out 0.3s; }
 

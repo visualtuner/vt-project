@@ -20,13 +20,7 @@
             </li>
         </ul>
 
-        <RouterView v-slot="{ Component, route }">
-                <transition :name="route.meta.runtimeTransition">
-                    <keep-alive>
-                        <component :is="Component || null" :key="route.path" />
-                    </keep-alive>
-                </transition>
-            </RouterView>
+        
     </div>
 </template>
 <script>
