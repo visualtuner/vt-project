@@ -20,7 +20,7 @@
             </template>
             <p>모달 1 내용이 여기에 들어가게 됩니다.</p>
             <template #footer>
-                <ButtonItem class="btn-shape-round" @click="closeAndOpenModal('modal2')">
+                <ButtonItem class="btn-shape-round btn-size-s" @click="closeAndOpenModal('modal2')">
                     <span class="btn-txt">닫기</span>
                 </ButtonItem>
             </template>
@@ -32,7 +32,7 @@
             </template>
             <p>모달 2 내용이 여기에 들어가게 됩니다.</p>
             <template #footer>
-                <ButtonItem class="btn-shape-round" @click="closeModal">
+                <ButtonItem class="btn-shape-round btn-size-s" @click="closeModal">
                     <span class="btn-txt">닫기</span>
                 </ButtonItem>
             </template>
@@ -58,7 +58,7 @@
                 modalStore.closeModal();
                 setTimeout(() => {
                     modalStore.openModal(nextModalId);
-                }, 300); // 애니메이션 완료 후 열기
+                }, 200); // 애니메이션 완료 후 열기
             };
 
             return {
