@@ -84,8 +84,13 @@
         background: white;
         width: 100%;
         height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
         padding: 20px;
-        border-radius: 12px;
+        border-radius: 16px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         position: relative;
         transition: all 0.2s;
