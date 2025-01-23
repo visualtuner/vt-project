@@ -1,0 +1,179 @@
+:root {
+    --vt-c-primary: #d00;
+    --vt-c-white: #fff;
+    --vt-c-white-soft: #f8f8f8;
+    --vt-c-white-mute: #f2f2f2;
+
+    --vt-c-black: #111;
+    --vt-c-black-soft: #222222;
+    --vt-c-black-mute: #282828;
+
+    --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
+    --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
+    --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+    --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+
+    --vt-c-text-light-1: var(--vt-c-black);
+    --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
+    --vt-c-text-dark-1: var(--vt-c-white);
+    --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+
+    --layer-z-index-root: auto;
+    --layer-z-index-header: 100;
+    --layer-z-index-gnb: 10;
+    --layer-z-index-sub: 100;
+    --layer-z-index-modal: 200;
+}
+
+/* semantic color variables for this project */
+:root {
+    --color-background: var(--vt-c-white);
+    --color-background-soft: var(--vt-c-white-soft);
+    --color-background-mute: var(--vt-c-white-mute);
+
+    --color-border: var(--vt-c-divider-light-2);
+    --color-border-hover: var(--vt-c-divider-light-1);
+
+    --color-heading: var(--vt-c-text-light-1);
+    --color-text: var(--vt-c-text-light-1);
+
+    --section-gap: 160px;
+}
+
+@media (prefers-color-scheme: dark) {
+    /* :root {
+        --color-background: var(--vt-c-black);
+        --color-background-soft: var(--vt-c-black-soft);
+        --color-background-mute: var(--vt-c-black-mute);
+
+        --color-border: var(--vt-c-divider-dark-2);
+        --color-border-hover: var(--vt-c-divider-dark-1);
+
+        --color-heading: var(--vt-c-text-dark-1);
+        --color-text: var(--vt-c-text-dark-2);
+    } */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+input,
+textarea {
+    user-select: all;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    appearance: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+em {
+    font-style: normal;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    scrollbar-width: none;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    scrollbar-width: none;
+    margin: 0;
+    padding: 0;
+    color: var(--color-text);
+    background: var(--color-background);
+    transition: color 0.5s, background-color 0.5s;
+    line-height: 1.6;
+    font-family: 'Pretendard', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.material-symbols-outlined {
+    --ms-size: 24px;
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    font-size: var(--ms-size);
+    width: var(--ms-size);
+    height: var(--ms-size);
+    line-height: var(--ms-size);
+}
+
+.material-symbols-outlined:not(:defined) {
+    visibility: hidden;
+}
+
+.material-symbols-outlined.size-16 {
+    --ms-size: 16px;
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 16;
+}
+
+.material-symbols-outlined.size-20 {
+    --ms-size: 20px;
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+}
+
+.material-symbols-outlined.size-24 {
+    --ms-size: 24px;
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+
+.material-symbols-outlined.size-28 {
+    --ms-size: 28px;
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 28;
+}
+
+.material-symbols-outlined.size-32 {
+    --ms-size: 32px;
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 32;
+}
+
+.material-symbols-outlined.size-36 {
+    --ms-size: 36px;
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 36;
+}
+
+.material-symbols-outlined.size-40 {
+    --ms-size: 40px;
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 40;
+}
+
+.material-symbols-outlined.size-48 {
+    --ms-size: 48px;
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 48;
+}
+
+.material-symbols-outlined.size-56 {
+    --ms-size: 56px;
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 56;
+}

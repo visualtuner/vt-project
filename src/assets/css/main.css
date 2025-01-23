@@ -1,0 +1,230 @@
+@import './base.css';
+@import './font/Pretendard/pretendardvariable.css';
+
+#app {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    scrollbar-width: none;
+}
+
+#layer-main,
+#layer-sub {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    scrollbar-width: none;
+
+    pointer-events: none;
+}
+
+#layer-main {
+    z-index: 0;
+}
+
+#layer-sub {
+    z-index: 2000;
+}
+
+:is(#layer-main, #layer-sub) * {
+    pointer-events: auto;
+}
+
+.view {
+    --layer-z-index: var(--layer-z-index-sub);
+    --transition-z-index: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    scrollbar-width: none;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+    z-index: calc(var(--layer-z-index) + var(--transition-z-index));
+}
+
+.view.root {
+    --layer-z-index: var(--layer-z-index-root);
+    padding-bottom: 56px;
+}
+
+.content-container {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    scrollbar-width: none;
+    padding-top: 56px;
+    position: relative;
+}
+
+.content-container::-webkit-scrollbar {
+    -webkit-appearance: none !important;
+    display: none !important;
+    opacity: 0 !important;
+    background: transparent !important;
+}
+
+.content {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 20px;
+}
+
+
+.loader-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+
+.btn-item {
+    --bg-color: transparent;
+    --border-color: transparent;
+    --label-color: var(--vt-c-text-light-1);
+    --shading-color-light: rgba(255, 255, 255, 0.25);
+    --shading-color-dark: rgba(0, 0, 0, 0.08);
+    --shading-color: var(--shading-color-dark);
+    --btn-size: 44px;
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    min-width: var(--btn-size);
+    height: var(--btn-size);
+    cursor: pointer;
+    gap: 8px;
+    padding: 0;
+    text-decoration: none;
+    user-select: none;
+    font-size: 16px;
+    position: relative;
+    outline: none;
+    border: none;
+    color: var(--label-color);
+    background: var(--bg-color);
+}
+
+.btn-item * {
+    user-select: none;
+    pointer-events: none;
+}
+
+.btn-item:is(:disabled, .disabled) {
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+.btn-item:is(:disabled, .disabled) :is(.btn-txt, .btn-icon) {
+    opacity: 0.8;
+}
+
+.btn-item:has(.btn-txt) {
+    padding: 0 calc(var(--btn-size) / 2);
+}
+
+.btn-item:has(.btn-icon + .btn-txt) {
+    padding-left: calc(var(--btn-size) / 4);
+}
+
+.btn-item:has(.btn-txt + .btn-icon) {
+    padding-right: calc(var(--btn-size) / 4);
+}
+
+.btn-item:before {
+    --shading-color: inherit;
+    content: '';
+    display: none;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: inherit;
+    background: var(--shading-color);
+}
+
+.btn-item:active:before {
+    display: block;
+}
+
+.btn-item .btn-icon {
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-item .btn-txt {
+    display: inline-block;
+}
+
+.btn-size-xs {
+    --btn-size: 28px;
+    font-size: 12px;
+    gap: 4px;
+}
+
+.btn-size-s {
+    --btn-size: 36px;
+    font-size: 14px;
+    gap: 4px;
+}
+
+.btn-size-m {
+    --btn-size: 44px;
+    font-size: 16px;
+}
+
+.btn-size-l {
+    --btn-size: 52px;
+    font-size: 18px;
+}
+
+.btn-size-xl {
+    --btn-size: 60px;
+    font-size: 20px;
+    gap: 12px;
+}
+
+.btn-shape-fillet {
+    border-radius: calc(var(--btn-size) / 8);
+}
+
+.btn-shape-round {
+    border-radius: 100px;
+}
+
+.btn-primary {
+    --bg-color: var(--vt-c-primary);
+    --border-color: transparent;
+    --label-color: var(--vt-c-white);
+    --shading-color: var(--shading-color-light);
+}
+
+.btn-primary-ol {
+    --bg-color: transparent;
+    --border-color: var(--vt-c-primary);
+    --label-color: var(--vt-c-primary);
+    box-shadow: inset 0 0 0 1px var(--vt-c-primary);
+}

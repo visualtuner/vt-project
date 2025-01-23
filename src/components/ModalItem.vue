@@ -1,0 +1,145 @@
+<template>
+    <transition name="modal">
+        <div v-if="isActive" class="modal-backdrop" @click="close">
+            <div class="modal-panel" @click.stop>
+                <div class="modal-header" v-if="$slots.header">
+                    <slot name="header"></slot>
+                </div>
+
+                <div class="modal-body">
+                    <slot></slot>
+                </div>
+
+                <div class="modal-footer" v-if="$slots.footer">
+                    <slot name="footer"></slot>
+                </div>
+            </div>
+        </div>
+    </transition>
+</template>
+
+<script>
+    import { computed, onMounted, onUnmounted } from "vue";
+    import { useModalStore } from "@/stores/modal";
+
+    export default {
+        name: "ModalItem",
+        props: {
+            id: {
+                type: String,
+                required: true,
+            },
+        },
+        setup(props) {
+            const modalStore = useModalStore();
+
+            const isActive = computed(() => modalStore.activeModalId === props.id);
+
+            const close = () => {
+                modalStore.closeModal();
+            };
+
+            const closeOnBackdropClick = () => {
+                close();
+            };
+
+            const handlePopState = () => {
+                console.log('핸들러');
+                modalStore.handleBackNavigation();
+            };
+
+            onMounted(() => {
+                window.addEventListener("popstate", handlePopState);
+            });
+
+            onUnmounted(() => {
+                window.removeEventListener("popstate", handlePopState);
+            });
+
+            return {
+                isActive,
+                close,
+                closeOnBackdropClick,
+            };
+        },
+    };
+</script>
+
+<style>
+    .modal-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 16px;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: var(--layer-z-index-modal);
+    }
+
+    .modal-panel {
+        background: white;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        position: relative;
+        transition: all 0.2s;
+    }
+
+    .modal-header {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .modal-header h2 {
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .modal-body {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .modal-footer {
+        width: 100%;
+        height: auto;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .modal-footer .btn-item {
+        flex: 1 0 0;
+        min-width: 0;
+    }
+
+    .close-button {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+    }
+
+    .modal-enter-active,
+    .modal-leave-active {
+        transition: all 0.2s;
+    }
+
+    .modal-enter-from,
+    .modal-leave-to {
+        opacity: 0;
+    }
+
+    :is(.modal-enter-from, .modal-leave-to) .modal-panel {
+        transform: translateY(40px) translateZ(0);
+    }
+</style>
