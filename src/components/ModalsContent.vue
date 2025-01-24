@@ -12,13 +12,28 @@
 				<span class="btn-txt">연속 모달 호출</span>
 				<span class="material-symbols-outlined btn-icon size-24">step_out</span>
 			</ButtonItem>
+
+			<ButtonItem class="btn-shape-round btn-primary" @click="openModal('modal3')">
+				<span class="btn-txt">헤더가 없는 모달</span>
+				<span class="material-symbols-outlined btn-icon size-24">step_out</span>
+			</ButtonItem>
+
+			<ButtonItem class="btn-shape-round btn-primary" @click="openModal('modal4')">
+				<span class="btn-txt">최대 높이 모달 #1</span>
+				<span class="material-symbols-outlined btn-icon size-24">step_out</span>
+			</ButtonItem>
+
+			<ButtonItem class="btn-shape-round btn-primary" @click="openModal('modal5')">
+				<span class="btn-txt">최대 높이 모달 #2</span>
+				<span class="material-symbols-outlined btn-icon size-24">step_out</span>
+			</ButtonItem>
 		</div>
 
 		<ModalItem id="modal1">
 			<template #header>
 				<h2>기본 모달 형식</h2>
 			</template>
-			<div>기본 모달 형식은 타이틀/본문/액션 버튼이 들어갑니다.</div>
+			<div>기본 모달 형식은 타이틀/본문/액션 버튼이 들어 갑니다.</div>
 			<template #footer>
 				<ButtonItem class="btn-shape-round" @click="closeModal">
 					<span class="btn-txt txt-w500">닫기</span>
@@ -38,6 +53,72 @@
 
 				<ButtonItem class="btn-shape-round" @click="closeAndOpenModal('modal1')">
 					<span class="btn-txt txt-w500">다음 모달</span>
+				</ButtonItem>
+			</template>
+		</ModalItem>
+
+		<ModalItem id="modal3">
+			<div>모달 헤더가 없는 모달은 모달 바디에 패딩탑이 들어 갑니다.</div>
+			<template #footer>
+				<ButtonItem class="btn-shape-round" @click="closeModal">
+					<span class="btn-txt txt-w500">닫기</span>
+				</ButtonItem>
+			</template>
+		</ModalItem>
+
+		<ModalItem id="modal4">
+			<template #header>
+				<h2>모달의 최대 높이 #1</h2>
+			</template>
+			<div>
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+			</div>
+			<template #footer>
+				<ButtonItem class="btn-shape-round" @click="closeModal">
+					<span class="btn-txt txt-w500">닫기</span>
+				</ButtonItem>
+			</template>
+		</ModalItem>
+
+		<ModalItem id="modal5">
+			<div>
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+			</div>
+			<template #footer>
+				<ButtonItem class="btn-shape-round" @click="closeModal">
+					<span class="btn-txt txt-w500">닫기</span>
 				</ButtonItem>
 			</template>
 		</ModalItem>

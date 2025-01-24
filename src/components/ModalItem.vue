@@ -120,12 +120,20 @@
 		padding: 0 24px;
 	}
 
-	.modal-body:has(.no-pd) {
+	.modal-panel:not(:has(.modal-header)) .modal-body {
+		padding-top: 24px;
+	}
+
+	.modal-body:has(.no-pd),
+	.modal-panel:not(:has(.modal-header)) .modal-body:has(.no-pd) {
 		padding: 0;
 	}
 
 	.modal-body::-webkit-scrollbar {
-		display: none;
+		-webkit-appearance: none !important;
+		display: none !important;
+		opacity: 0 !important;
+		background: transparent !important;
 	}
 
 	.modal-footer {
