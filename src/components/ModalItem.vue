@@ -6,7 +6,7 @@
 					<slot name="header"></slot>
 				</div>
 
-				<div class="modal-body">
+				<div class="modal-body" @scroll="scrollHandle">
 					<slot></slot>
 				</div>
 
@@ -117,7 +117,11 @@
 		min-height: 0;
 		position: relative;
 		overflow: overlay;
-		padding: 0 24px;
+		padding: 0 24px 24px;
+		mask-image: linear-gradient(
+			rgba(255, 255, 255, 1) calc(100% - 24px),
+			rgba(255, 255, 255, 0) 100%
+		);
 	}
 
 	.modal-panel:not(:has(.modal-header)) .modal-body {
@@ -127,14 +131,15 @@
 	.modal-body:has(.no-pd),
 	.modal-panel:not(:has(.modal-header)) .modal-body:has(.no-pd) {
 		padding: 0;
+		mask-image: none;
 	}
 
-	.modal-body::-webkit-scrollbar {
-		-webkit-appearance: none !important;
-		display: none !important;
-		opacity: 0 !important;
-		background: transparent !important;
-	}
+	/* .modal-body::-webkit-scrollbar {
+				-webkit-appearance: none !important;
+				display: none !important;
+				opacity: 0 !important;
+				background: transparent !important;
+			} */
 
 	.modal-footer {
 		flex: none;
@@ -145,7 +150,7 @@
 		align-items: center;
 		justify-content: center;
 		gap: 8px;
-		padding: 24px 24px 12px;
+		padding: 0 24px 12px;
 	}
 
 	.modal-footer:has(.no-pd) {
