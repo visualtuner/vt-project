@@ -52,7 +52,7 @@
 	}
 
 	#gnb a p {
-		color: #555;
+		color: var(--color-text-1);
 		font-size: 11px;
 		font-weight: 500;
 		line-height: 16px;
@@ -70,12 +70,12 @@
 	#gnb a .material-symbols-outlined.more-icon {
 		transition: none;
 		font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 40;
-		-webkit-text-stroke: 1.6px var(--color-text);
+		-webkit-text-stroke: 1.6px var(--color-text-1);
 		color: transparent;
 	}
 
 	#gnb a.router-link-active .material-symbols-outlined.more-icon {
 		font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 40;
-		color: var(--color-text);
+		color: var(--color-text-1);
 	}
 </style>
