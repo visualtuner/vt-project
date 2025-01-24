@@ -162,11 +162,11 @@
 			</template>
 		</ModalItem>
 
-		<ModalItem id="modal6" class="transparent-modal">
+		<ModalItem id="modal6" backdrop-color="transparent" :backdrop-blur="true">
 			<template #header>
 				<h2>투명 모달</h2>
 			</template>
-			<div class="transparent-modal">
+			<div>
 				투명한 모달입니다. 배경이 투명색입니다. 이미지나 로띠 애니메이션으로 임펙트 있는
 				모달을 꾸며 보세요! 다양한 용도로 사용가능합니다.
 			</div>

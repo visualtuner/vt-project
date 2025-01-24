@@ -1,6 +1,15 @@
 <template>
 	<transition name="modal">
-		<div v-if="isActive" class="modal-backdrop" @click="close">
+		<div
+			v-if="isActive"
+			class="modal-backdrop"
+			:class="{
+				'backdrop-transparent': backdropColor === 'transparent',
+				'backdrop-light': backdropColor === 'white',
+				'backdrop-blur': backdropBlur,
+			}"
+			@click="close"
+		>
 			<div class="modal-panel" @click.stop>
 				<div class="modal-header" v-if="$slots.header">
 					<slot name="header"></slot>
@@ -24,10 +33,9 @@
 	export default {
 		name: 'ModalItem',
 		props: {
-			id: {
-				type: String,
-				required: true,
-			},
+			id: { type: String, required: true },
+			backdropColor: { type: String, default: '' },
+			backdropBlur: { type: Boolean, default: false },
 		},
 		setup(props) {
 			const modalStore = inject('$modalStore')
@@ -78,8 +86,21 @@
 		z-index: var(--layer-z-index-modal);
 	}
 
+	.modal-backdrop.backdrop-transparent {
+		background: transparent;
+	}
+
+	.modal-backdrop.backdrop-light {
+		background: rgba(255, 255, 255, 0.2);
+	}
+
+	.modal-backdrop.backdrop-blur {
+		-webkit-backdrop-filter: blur(2px);
+		backdrop-filter: blur(2px);
+	}
+
 	.modal-panel {
-		background: white;
+		background: var(--color-background);
 		width: 100%;
 		height: auto;
 		max-height: 100%;
@@ -93,10 +114,7 @@
 		transition: all 0.2s;
 	}
 
-	.transparent-modal.modal-backdrop {
-		background: transparent;
-	}
-	.transparent-modal .modal-panel {
+	.modal-backdrop.backdrop-transparent .modal-panel {
 		background: transparent;
 		box-shadow: none;
 	}
@@ -141,13 +159,6 @@
 		padding: 0;
 		mask-image: none;
 	}
-
-	/* .modal-body::-webkit-scrollbar {
-									-webkit-appearance: none !important;
-									display: none !important;
-									opacity: 0 !important;
-									background: transparent !important;
-								} */
 
 	.modal-footer {
 		flex: none;
