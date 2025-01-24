@@ -18,7 +18,7 @@
             <template #header>
                 <h2>기본 모달 형식</h2>
             </template>
-            <p>기본 모달 형식은 타이틀/본문/액션 버튼이 들어갑니다.</p>
+            <div>기본 모달 형식은 타이틀/본문/액션 버튼이 들어갑니다.</div>
             <template #footer>
                 <ButtonItem class="btn-shape-round" @click="closeModal">
                     <span class="btn-txt txt-w500">닫기</span>
@@ -30,7 +30,7 @@
             <template #header>
                 <h2>연속 모달 호출</h2>
             </template>
-            <p>액션 버튼에 모달 닫고, 바로 원하는 모달을 호출하면 연속으로 열리게 됩니다.</p>
+            <div>액션 버튼에 모달 닫고, 바로 원하는 모달을 호출하면 연속으로 열리게 됩니다.</div>
             <template #footer>
                 <ButtonItem class="btn-shape-round" @click="closeModal">
                     <span class="btn-txt txt-w500">닫기</span>

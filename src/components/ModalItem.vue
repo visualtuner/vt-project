@@ -87,8 +87,6 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 16px;
-        padding: 24px;
         border-radius: 16px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         position: relative;
@@ -100,6 +98,11 @@
         width: 100%;
         height: auto;
         position: relative;
+        padding: 24px 24px 20px;
+    }
+
+    .modal-header:has(.no-pd) {
+        padding: 0;
     }
 
     .modal-header h2 {
@@ -114,6 +117,11 @@
         min-height: 0;
         position: relative;
         overflow: overlay;
+        padding: 0 24px;
+    }
+
+    .modal-body:has(.no-pd) {
+        padding: 0;
     }
 
     .modal-body::-webkit-scrollbar {
@@ -129,6 +137,11 @@
         align-items: center;
         justify-content: center;
         gap: 8px;
+        padding: 20px 24px 12px;
+    }
+
+    .modal-footer:has(.no-pd) {
+        padding: 0;
     }
 
     .modal-footer .btn-item {
