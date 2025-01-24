@@ -82,12 +82,13 @@
         background: white;
         width: 100%;
         height: auto;
+        max-height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 16px;
-        padding: 20px;
+        padding: 24px;
         border-radius: 16px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         position: relative;
@@ -95,6 +96,7 @@
     }
 
     .modal-header {
+        flex: none;
         width: 100%;
         height: auto;
         position: relative;
@@ -106,12 +108,20 @@
     }
 
     .modal-body {
+        flex: 1 1 auto;
         width: 100%;
         height: auto;
+        min-height: 0;
         position: relative;
+        overflow: overlay;
+    }
+
+    .modal-body::-webkit-scrollbar {
+        display: none;
     }
 
     .modal-footer {
+        flex: none;
         width: 100%;
         height: auto;
         position: relative;
