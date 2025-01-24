@@ -19,11 +19,10 @@
 </template>
 
 <script>
-    import { computed, onMounted, onUnmounted } from "vue";
-    import { useModalStore } from "@/stores/modal";
+    import { computed, onMounted, onUnmounted, inject } from 'vue';
 
     export default {
-        name: "ModalItem",
+        name: 'ModalItem',
         props: {
             id: {
                 type: String,
@@ -31,7 +30,12 @@
             },
         },
         setup(props) {
-            const modalStore = useModalStore();
+            const modalStore = inject('$modalStore');
+
+            if (!modalStore) {
+                console.error('ModalStore가 제공되지 않았습니다.');
+                return {};
+            }
 
             const isActive = computed(() => modalStore.activeModalId === props.id);
 
@@ -39,27 +43,21 @@
                 modalStore.closeModal();
             };
 
-            const closeOnBackdropClick = () => {
-                close();
-            };
-
             const handlePopState = () => {
-                console.log('핸들러');
                 modalStore.handleBackNavigation();
             };
 
             onMounted(() => {
-                window.addEventListener("popstate", handlePopState);
+                window.addEventListener('popstate', handlePopState);
             });
 
             onUnmounted(() => {
-                window.removeEventListener("popstate", handlePopState);
+                window.removeEventListener('popstate', handlePopState);
             });
 
             return {
                 isActive,
                 close,
-                closeOnBackdropClick,
             };
         },
     };

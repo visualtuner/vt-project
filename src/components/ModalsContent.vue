@@ -40,11 +40,17 @@
     </div>
 </template>
 <script>
-    import { useModalStore } from '@/stores/modal';
+    import { inject } from 'vue';
+
     export default {
         name: "ModalsContent",
         setup() {
-            const modalStore = useModalStore();
+            const modalStore = inject('$modalStore');
+
+            if (!modalStore) {
+                console.error('ModalStore가 제공되지 않았습니다.');
+                return {};
+            }
 
             const openModal = (id) => {
                 modalStore.openModal(id);
@@ -55,9 +61,9 @@
             };
 
             const closeAndOpenModal = (nextModalId) => {
-                modalStore.closeModal();
+                closeModal();
                 setTimeout(() => {
-                    modalStore.openModal(nextModalId);
+                    openModal(nextModalId);
                 }, 200); // 애니메이션 완료 후 열기
             };
 
