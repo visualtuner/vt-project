@@ -49,12 +49,7 @@
     export default {
         name: "ModalsContent",
         setup() {
-            const modalStore = inject('$modalStore');
-
-            if (!modalStore) {
-                console.error('ModalStore가 제공되지 않았습니다.');
-                return {};
-            }
+            const modalStore = inject("$modalStore");
 
             const openModal = (id) => {
                 modalStore.openModal(id);
@@ -68,7 +63,7 @@
                 closeModal();
                 setTimeout(() => {
                     openModal(nextModalId);
-                }, 200); // 애니메이션 완료 후 열기
+                }, 200);
             };
 
             return {
