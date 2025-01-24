@@ -9,18 +9,18 @@
             </ButtonItem>
 
             <ButtonItem class="btn-shape-round btn-primary" @click="openModal('modal2')">
-                <span class="btn-txt">기본 모달</span>
+                <span class="btn-txt">연속 모달 호출</span>
                 <span class="material-symbols-outlined btn-icon size-24">step_out</span>
             </ButtonItem>
         </div>
 
         <ModalItem id="modal1">
             <template #header>
-                <h2>모달 1</h2>
+                <h2>기본 모달 형식</h2>
             </template>
-            <p>모달 1 내용이 여기에 들어가게 됩니다.</p>
+            <p>기본 모달 형식은 타이틀/본문/액션 버튼이 들어갑니다.</p>
             <template #footer>
-                <ButtonItem class="btn-shape-round btn-size-s" @click="closeAndOpenModal('modal2')">
+                <ButtonItem class="btn-shape-round btn-size-s" @click="closeModal">
                     <span class="btn-txt">닫기</span>
                 </ButtonItem>
             </template>
@@ -28,12 +28,16 @@
 
         <ModalItem id="modal2">
             <template #header>
-                <h2>모달 2</h2>
+                <h2>연속 모달 호출</h2>
             </template>
-            <p>모달 2 내용이 여기에 들어가게 됩니다.</p>
+            <p>액션 버튼에 모달 닫고, 바로 원하는 모달을 호출하면 연속으로 열리게 됩니다.</p>
             <template #footer>
                 <ButtonItem class="btn-shape-round btn-size-s" @click="closeModal">
                     <span class="btn-txt">닫기</span>
+                </ButtonItem>
+
+                <ButtonItem class="btn-shape-round btn-size-s" @click="closeAndOpenModal('modal1')">
+                    <span class="btn-txt">다음 모달</span>
                 </ButtonItem>
             </template>
         </ModalItem>
