@@ -93,6 +93,14 @@
 		transition: all 0.2s;
 	}
 
+	.transparent-modal.modal-backdrop {
+		background: transparent;
+	}
+	.transparent-modal .modal-panel {
+		background: transparent;
+		box-shadow: none;
+	}
+
 	.modal-header {
 		flex: none;
 		width: 100%;
@@ -135,11 +143,11 @@
 	}
 
 	/* .modal-body::-webkit-scrollbar {
-				-webkit-appearance: none !important;
-				display: none !important;
-				opacity: 0 !important;
-				background: transparent !important;
-			} */
+									-webkit-appearance: none !important;
+									display: none !important;
+									opacity: 0 !important;
+									background: transparent !important;
+								} */
 
 	.modal-footer {
 		flex: none;

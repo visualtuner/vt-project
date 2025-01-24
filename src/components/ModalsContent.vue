@@ -27,6 +27,11 @@
 				<span class="btn-txt">최대 높이 모달 #2</span>
 				<span class="material-symbols-outlined btn-icon size-24">step_out</span>
 			</ButtonItem>
+
+			<ButtonItem class="btn-shape-round btn-primary" @click="openModal('modal6')">
+				<span class="btn-txt">투명 모달</span>
+				<span class="material-symbols-outlined btn-icon size-24">step_out</span>
+			</ButtonItem>
 		</div>
 
 		<ModalItem id="modal1">
@@ -149,6 +154,21 @@
 				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
 				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
 				모달의 최대 높이를 보여줍니다. 최대 높이까지 늘어나고 넘치면 스크롤이 생깁니다.
+			</div>
+			<template #footer>
+				<ButtonItem class="btn-shape-round" @click="closeModal">
+					<span class="btn-txt txt-w500">닫기</span>
+				</ButtonItem>
+			</template>
+		</ModalItem>
+
+		<ModalItem id="modal6" class="transparent-modal">
+			<template #header>
+				<h2>투명 모달</h2>
+			</template>
+			<div class="transparent-modal">
+				투명한 모달입니다. 배경이 투명색입니다. 이미지나 로띠 애니메이션으로 임펙트 있는
+				모달을 꾸며 보세요! 다양한 용도로 사용가능합니다.
 			</div>
 			<template #footer>
 				<ButtonItem class="btn-shape-round" @click="closeModal">
