@@ -91,7 +91,7 @@
 	}
 
 	.modal-backdrop.backdrop-light {
-		background: rgba(255, 255, 255, 0.2);
+		background: rgba(255, 255, 255, 0.6);
 	}
 
 	.modal-backdrop.backdrop-blur {
