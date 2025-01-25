@@ -95,8 +95,8 @@
 	}
 
 	.modal-backdrop.backdrop-blur {
-		-webkit-backdrop-filter: blur(2px);
-		backdrop-filter: blur(2px);
+		-webkit-backdrop-filter: blur(16px);
+		backdrop-filter: blur(16px);
 	}
 
 	.modal-panel {
