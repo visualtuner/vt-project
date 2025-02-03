@@ -3,37 +3,37 @@
     <h1>This is a modals page</h1>
 
     <div class="btns">
-      <ButtonItem class="btn-shape-round btn-primary" @click="openModal('modal1')">
+      <ButtonItem class="btn-shape-round btn-primary" @click="$modal.openModal('modal1')">
         <span class="btn-txt">기본 모달</span>
         <span class="material-symbols-outlined btn-icon size-24">step_out</span>
       </ButtonItem>
 
-      <ButtonItem class="btn-shape-round btn-primary" @click="openModal('modal2')">
+      <ButtonItem class="btn-shape-round btn-primary" @click="$modal.openModal('modal2')">
         <span class="btn-txt">연속 모달 호출</span>
         <span class="material-symbols-outlined btn-icon size-24">step_out</span>
       </ButtonItem>
 
-      <ButtonItem class="btn-shape-round btn-primary" @click="openModal('modal3')">
+      <ButtonItem class="btn-shape-round btn-primary" @click="$modal.openModal('modal3')">
         <span class="btn-txt">헤더가 없는 모달</span>
         <span class="material-symbols-outlined btn-icon size-24">step_out</span>
       </ButtonItem>
 
-      <ButtonItem class="btn-shape-round btn-primary" @click="openModal('modal4')">
+      <ButtonItem class="btn-shape-round btn-primary" @click="$modal.openModal('modal4')">
         <span class="btn-txt">최대 높이 모달 #1</span>
         <span class="material-symbols-outlined btn-icon size-24">step_out</span>
       </ButtonItem>
 
-      <ButtonItem class="btn-shape-round btn-primary" @click="openModal('modal5')">
+      <ButtonItem class="btn-shape-round btn-primary" @click="$modal.openModal('modal5')">
         <span class="btn-txt">최대 높이 모달 #2</span>
         <span class="material-symbols-outlined btn-icon size-24">step_out</span>
       </ButtonItem>
 
-      <ButtonItem class="btn-shape-round btn-primary" @click="openModal('modal6')">
+      <ButtonItem class="btn-shape-round btn-primary" @click="$modal.openModal('modal6')">
         <span class="btn-txt">투명 모달</span>
         <span class="material-symbols-outlined btn-icon size-24">step_out</span>
       </ButtonItem>
 
-      <ButtonItem class="btn-shape-round btn-primary" @click="openModal('modal7')">
+      <ButtonItem class="btn-shape-round btn-primary" @click="$modal.openModal('modal7')">
         <span class="btn-txt">흰색 배경 모달</span>
         <span class="material-symbols-outlined btn-icon size-24">step_out</span>
       </ButtonItem>
@@ -45,7 +45,7 @@
       </template>
       <div>기본 모달 형식은 타이틀/본문/액션 버튼이 들어 갑니다.</div>
       <template #footer>
-        <ButtonItem class="btn-shape-round" @click="closeModal">
+        <ButtonItem class="btn-shape-round" @click="$modal.closeModal">
           <span class="btn-txt txt-w500">닫기</span>
         </ButtonItem>
       </template>
@@ -57,11 +57,11 @@
       </template>
       <div>액션 버튼에 모달 닫고, 바로 원하는 모달을 호출하면 연속으로 열리게 됩니다.</div>
       <template #footer>
-        <ButtonItem class="btn-shape-round" @click="closeModal">
+        <ButtonItem class="btn-shape-round" @click="$modal.closeModal">
           <span class="btn-txt txt-w500">닫기</span>
         </ButtonItem>
 
-        <ButtonItem class="btn-shape-round" @click="closeAndOpenModal('modal1')">
+        <ButtonItem class="btn-shape-round" @click="$modal.closeAndOpenModal('modal1')">
           <span class="btn-txt txt-w500">다음 모달</span>
         </ButtonItem>
       </template>
@@ -70,7 +70,7 @@
     <ModalItem id="modal3">
       <div>모달 헤더가 없는 모달은 모달 바디에 패딩탑이 들어 갑니다.</div>
       <template #footer>
-        <ButtonItem class="btn-shape-round" @click="closeModal">
+        <ButtonItem class="btn-shape-round" @click="$modal.closeModal">
           <span class="btn-txt txt-w500">닫기</span>
         </ButtonItem>
       </template>
@@ -84,7 +84,7 @@
         <p v-for="n in 100" :key="n">{{ n }}번 째 줄</p>
       </div>
       <template #footer>
-        <ButtonItem class="btn-shape-round" @click="closeModal">
+        <ButtonItem class="btn-shape-round" @click="$modal.closeModal">
           <span class="btn-txt txt-w500">닫기</span>
         </ButtonItem>
       </template>
@@ -95,7 +95,7 @@
         <p v-for="n in 100" :key="n">{{ n }}번 째 줄</p>
       </div>
       <template #footer>
-        <ButtonItem class="btn-shape-round" @click="closeModal">
+        <ButtonItem class="btn-shape-round" @click="$modal.closeModal">
           <span class="btn-txt txt-w500">닫기</span>
         </ButtonItem>
       </template>
@@ -110,7 +110,7 @@
         모달을 꾸며 보세요! 다양한 용도로 사용가능합니다.
       </div>
       <template #footer>
-        <ButtonItem class="btn-shape-round" @click="closeModal">
+        <ButtonItem class="btn-shape-round" @click="$modal.closeModal">
           <span class="btn-txt txt-w500">닫기</span>
         </ButtonItem>
       </template>
@@ -120,12 +120,12 @@
   </div>
 </template>
 <script>
-  import { useModal } from "@/composables/useModal";
-
   export default {
     name: 'ModalsContent',
-    setup() {
-      return useModal(); // 사용법 간결하게
+    methods: {
+      openModal7() { // @click="openModal7" 이렇게 호출해도 된다
+        this.$modal.openModal("modal7");
+      },
     },
   }
 </script>

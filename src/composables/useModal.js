@@ -1,27 +1,20 @@
-import { inject } from 'vue'
+import { useModalStore } from '@/stores/modal'
 
-export function useModal() {
-  const modalStore = inject('$modalStore')
+export function createModal() {
+  const modalStore = useModalStore()
 
-  if (!modalStore) {
-    console.error('ModalStore가 제공되지 않았습니다.')
-    return {}
+  return {
+    openModal(id) {
+      modalStore.openModal(id)
+    },
+    closeModal() {
+      modalStore.closeModal()
+    },
+    closeAndOpenModal(nextModalId) {
+      modalStore.closeModal()
+      setTimeout(() => {
+        modalStore.openModal(nextModalId)
+      }, 100)
+    },
   }
-
-  const openModal = (id) => {
-    modalStore.openModal(id)
-  }
-
-  const closeModal = () => {
-    modalStore.closeModal()
-  }
-
-  const closeAndOpenModal = (nextModalId) => {
-    closeModal()
-    setTimeout(() => {
-      openModal(nextModalId)
-    }, 100)
-  }
-
-  return { openModal, closeModal, closeAndOpenModal }
 }

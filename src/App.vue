@@ -1,13 +1,8 @@
 <script>
   import GlobalNav from '@/components/GlobalNav.vue'
-  import { useModal } from "@/composables/useModal";
-
   export default {
     components: {
       GlobalNav,
-    },
-    setup() {
-      return useModal(); // 사용법 간결하게
     },
   }
 </script>
@@ -35,7 +30,7 @@
       두었습니다.
     </div>
     <template #footer>
-      <ButtonItem class="btn-shape-round" @click="closeModal">
+      <ButtonItem class="btn-shape-round" @click="$modal.closeModal">
         <span class="btn-txt txt-w500">닫기</span>
       </ButtonItem>
     </template>
