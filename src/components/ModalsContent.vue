@@ -133,33 +133,12 @@
   </div>
 </template>
 <script>
-  import { inject } from 'vue'
+  import { useModal } from "@/composables/useModal";
 
   export default {
     name: 'ModalsContent',
     setup() {
-      const modalStore = inject('$modalStore')
-
-      const openModal = (id) => {
-        modalStore.openModal(id)
-      }
-
-      const closeModal = () => {
-        modalStore.closeModal()
-      }
-
-      const closeAndOpenModal = (nextModalId) => {
-        closeModal()
-        setTimeout(() => {
-          openModal(nextModalId)
-        }, 100)
-      }
-
-      return {
-        openModal,
-        closeModal,
-        closeAndOpenModal,
-      }
+      return useModal(); // 사용법 간결하게
     },
   }
 </script>

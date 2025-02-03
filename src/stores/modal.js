@@ -14,8 +14,6 @@ export const useModalStore = defineStore('modal', {
 
       const updatedState = { ...history.state, modalOpen: true, modalId: id }
       history.pushState(updatedState, '', location.href)
-
-      console.log(`모달 ${id} 열림`)
     },
     closeModal() {
       if (!this.activeModalId) return
@@ -26,14 +24,11 @@ export const useModalStore = defineStore('modal', {
       if (history.state?.modalOpen && history.state?.modalId === lastModalId) {
         history.back()
       }
-
-      console.log(`모달 ${lastModalId} 닫힘`)
     },
     handleBackNavigation() {
       if (this.historyStack.length > 0) {
         this.historyStack.pop() // 마지막 모달 제거
         this.activeModalId = this.historyStack[this.historyStack.length - 1] || null
-        console.log('뒤로가기 처리: 활성 모달', this.activeModalId)
       }
     },
   },
