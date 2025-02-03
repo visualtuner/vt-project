@@ -37,6 +37,11 @@
         <span class="btn-txt">흰색 배경 모달</span>
         <span class="material-symbols-outlined btn-icon size-24">step_out</span>
       </ButtonItem>
+
+      <ButtonItem class="btn-shape-round btn-primary" @click="$modal.openModal('modal8')">
+        <span class="btn-txt">기본 블러 모달</span>
+        <span class="material-symbols-outlined btn-icon size-24">step_out</span>
+      </ButtonItem>
     </div>
 
     <ModalItem id="modal1">
@@ -61,7 +66,7 @@
           <span class="btn-txt txt-w500">닫기</span>
         </ButtonItem>
 
-        <ButtonItem class="btn-shape-round" @click="$modal.closeAndOpenModal('modal1')">
+        <ButtonItem class="btn-shape-round" @click="$modal.closeAndOpenModal('modal8')">
           <span class="btn-txt txt-w500">다음 모달</span>
         </ButtonItem>
       </template>
