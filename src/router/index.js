@@ -6,82 +6,83 @@ import ButtonsView from '../views/ButtonsView.vue'
 import ModalsView from '../views/ModalsView.vue'
 import MoreView from '../views/MoreView.vue'
 
-function loadView (view) {
-    return () => import(`@/views/${view}.vue`)
+function loadView(view) {
+	return () => import(`@/views/${view}.vue`)
 }
 
 const router = createRouter({
 	//history: createWebHistory(import.meta.env.BASE_URL),
-    history: createWebHashHistory(),
+	history: createWebHashHistory(),
 	routes: [
 		{
-			path: "/",
-			name: "home",
+			path: '/',
+			name: 'home',
 			component: HomeView,
-            meta: { transition: 'no-transition' },
+			meta: { transition: 'no-transition' },
 		},
 		{
-			path: "/about",
-			name: "about",
+			path: '/about',
+			name: 'about',
 			component: AboutView,
-            meta: { transition: 'no-transition' },
+			meta: { transition: 'no-transition' },
 		},
-        {
-			path: "/components",
-			name: "components",
+		{
+			path: '/components',
+			name: 'components',
 			component: ComponentsView,
-            meta: { transition: 'no-transition' },
+			meta: { transition: 'no-transition' },
 		},
-        {
-            path: "/components/buttons",
-            name: "buttons",
-            component: ButtonsView,
-            meta: { transition: 'slide-up' },
-        },
-        {
-            path: "/components/modals",
-            name: "modals",
-            component: ModalsView,
-            meta: { transition: 'slide-up' },
-        },
-        {
-			path: "/more",
-			name: "more",
-            component: MoreView,
-            meta: { transition: 'no-transition' },
+		{
+			path: '/components/buttons',
+			name: 'buttons',
+			component: ButtonsView,
+			meta: { transition: 'slide-up' },
+		},
+		{
+			path: '/components/modals',
+			name: 'modals',
+			component: ModalsView,
+			meta: { transition: 'slide-up' },
+		},
+		{
+			path: '/more',
+			name: 'more',
+			component: MoreView,
+			meta: { transition: 'no-transition' },
 		},
 	],
 	scrollBehavior(to, from, savedPosition) {
 		if (savedPosition) {
-			return savedPosition;
+			return savedPosition
 		} else {
-			return { top: 0 };
+			return { top: 0 }
 		}
 	},
-});
+})
 
 function setupRouterTransitions(router) {
-    let isBack = false; 
+	let isBack = false
 
-    router.options.history.listen((to, from, info) => {
-        isBack = info.direction === 'back';
-    });
+	router.options.history.listen((to, from, info) => {
+		isBack = info.direction === 'back'
+	})
 
-    router.beforeEach((to, from, next) => {
-        const baseTransition = isBack ? (from.meta.transition || 'slide-fade') : (to.meta.transition || 'slide-fade');
-        const finalTransitionName = isBack ? baseTransition + '-reverse' : baseTransition;
+	router.beforeEach((to, from, next) => {
+		const baseTransition = isBack
+			? from.meta.transition || 'slide-fade'
+			: to.meta.transition || 'slide-fade'
+		const finalTransitionName = isBack ? baseTransition + '-reverse' : baseTransition
 
-        to.meta.runtimeTransition = finalTransitionName;
-    
-        next();
-      });
+		to.meta.runtimeTransition = finalTransitionName
 
-    router.afterEach((to, from) => {
-        isBack = false;
-    });
+		next()
+	})
+
+	router.afterEach((to, from) => {
+		isBack = false
+	})
 }
 
-setupRouterTransitions(router);
+setupRouterTransitions(router)
 
-
-export default router;
+export default router

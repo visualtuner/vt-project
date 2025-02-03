@@ -37,6 +37,7 @@
 		z-index: var(--layer-z-index-gnb);
 		box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
 	}
+
 	#gnb a {
 		flex: 1 0 0;
 		min-width: 0;
