@@ -1,4 +1,4 @@
-import { useModalStore } from '@/stores/modal'
+import { useModalStore } from '@/stores/modalStore'
 
 export function createModal() {
 	const modalStore = useModalStore()

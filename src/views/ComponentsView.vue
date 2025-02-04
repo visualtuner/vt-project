@@ -1,6 +1,6 @@
 <template>
 	<div class="view root">
-		<Header :title="pageTitle" :isRoot="true" class="transform-header"></Header>
+		<HeaderItem :title="pageTitle" :isRoot="true" class="transform-header"></HeaderItem>
 		<div class="content-container">
 			<Suspense>
 				<template #default>
@@ -35,36 +35,36 @@
 </template>
 
 <script>
-	import { ref, onActivated, onDeactivated, onMounted, watch } from 'vue'
-	import Header from '@/components/Header.vue'
+	import HeaderItem from '@/components/HeaderItem.vue'
 	import LoaderItem from '@/components/LoaderItem.vue'
 	import { defineAsyncComponent } from 'vue'
+	import { useScrollStore } from '@/stores/scrollStore'
 	const AsyncContent = defineAsyncComponent(() => import('@/components/ComponentsContent.vue'))
 
 	export default {
 		/*setup() {
-	        const isActivated = ref(false);
-	        const computedTransition = ref('slide-up');
+			const isActivated = ref(false);
+			const computedTransition = ref('slide-up');
 
-	        onActivated(() => {
-	            isActivated.value = true;
-	        });
+			onActivated(() => {
+				isActivated.value = true;
+			});
 
-	        onDeactivated(() => {
-	            isActivated.value = false;
-	        });
+			onDeactivated(() => {
+				isActivated.value = false;
+			});
 
-	        onMounted(() => {
-	            isActivated.value = true;
-	        });
+			onMounted(() => {
+				isActivated.value = true;
+			});
 
-	        return {
-	            isActivated,
-	            computedTransition,
-	        };
-	    },*/
+			return {
+				isActivated,
+				computedTransition,
+			};
+		},*/
 		components: {
-			Header,
+			HeaderItem,
 			AsyncContent,
 			LoaderItem,
 		},
@@ -74,31 +74,32 @@
 				scrollPosName: 'componentsScrollPos',
 			}
 		},
+		setup() {
+			const scrollStore = useScrollStore();
+			return { scrollStore };
+		},
 		methods: {
 			getScrollContainer() {
 				return this.$el ? this.$el.querySelector('.content-container') : null
 			},
 		},
 		beforeRouteLeave(to, from, next) {
-			const container = this.getScrollContainer()
+			const container = this.getScrollContainer();
 			if (container) {
-				//TODO: pinia 상태값으로 변경
-				window.sessionStorage.setItem(this.scrollPosName, container.scrollTop)
+				this.scrollStore.saveScrollPosition(this.scrollPosName, container.scrollTop);
 			}
-			next()
+			next();
 		},
 		beforeRouteEnter(to, from, next) {
 			next((vm) => {
 				vm.$nextTick(() => {
-					const container = vm.getScrollContainer() // vm을 사용하여 호출
+					const container = vm.getScrollContainer();
 					if (container) {
-						//TODO: pinia 상태값으로 변경
-						let lastScrollPos =
-							parseInt(window.sessionStorage.getItem(vm.scrollPosName), 10) || 0
-						container.scrollTo(0, lastScrollPos)
+						let lastScrollPos = vm.scrollStore.getScrollPosition(vm.scrollPosName);
+						container.scrollTo(0, lastScrollPos);
 					}
-				})
-			})
+				});
+			});
 		},
 	}
 </script>

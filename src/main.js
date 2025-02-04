@@ -6,7 +6,7 @@ import App from './App.vue'
 import router from './router'
 import ButtonItem from '@/components/ButtonItem.vue'
 import ModalItem from '@/components/ModalItem.vue'
-import { useModalStore } from '@/stores/modal'
+import { useModalStore } from '@/stores/modalStore'
 import { createModal } from '@/composables/useModal'
 
 const pinia = createPinia()

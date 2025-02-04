@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import ComponentsView from '../views/ComponentsView.vue'
@@ -19,45 +19,51 @@ const router = createRouter({
 			name: 'home',
 			component: HomeView,
 			meta: { transition: 'no-transition' },
+			props: true,
 		},
 		{
 			path: '/about',
 			name: 'about',
 			component: AboutView,
 			meta: { transition: 'no-transition' },
+			props: true,
 		},
 		{
 			path: '/components',
 			name: 'components',
 			component: ComponentsView,
 			meta: { transition: 'no-transition' },
+			props: true,
 		},
 		{
 			path: '/components/buttons',
 			name: 'buttons',
 			component: ButtonsView,
 			meta: { transition: 'slide-up' },
+			props: true,
 		},
 		{
 			path: '/components/modals',
 			name: 'modals',
 			component: ModalsView,
 			meta: { transition: 'slide-up' },
+			props: true,
 		},
 		{
 			path: '/more',
 			name: 'more',
 			component: MoreView,
 			meta: { transition: 'no-transition' },
+			props: true,
 		},
 	],
-	scrollBehavior(to, from, savedPosition) {
+	/*scrollBehavior(to, from, savedPosition) {
 		if (savedPosition) {
 			return savedPosition
 		} else {
 			return { top: 0 }
 		}
-	},
+	},*/
 })
 
 function setupRouterTransitions(router) {
