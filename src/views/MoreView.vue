@@ -18,7 +18,7 @@
 	import HeaderItem from '@/components/HeaderItem.vue'
 	import LoaderItem from '@/components/LoaderItem.vue'
 	import { defineAsyncComponent } from 'vue'
-	import { useScrollStore } from '@/stores/scrollStore'
+	import { useScrollStore, saveScrollPositionBeforeLeave, restoreScrollPositionOnEnter } from '@/stores/scrollStore';
 	const AsyncContent = defineAsyncComponent(() => import('@/components/MoreContent.vue'))
 
 	export default {
@@ -37,28 +37,12 @@
 			const scrollStore = useScrollStore();
 			return { scrollStore };
 		},
-		methods: {
-			getScrollContainer() {
-				return this.$el ? this.$el.querySelector('.content-container') : null
-			},
-		},
 		beforeRouteLeave(to, from, next) {
-			const container = this.getScrollContainer();
-			if (container) {
-				this.scrollStore.saveScrollPosition(this.scrollPosName, container.scrollTop);
-			}
+			saveScrollPositionBeforeLeave(this);
 			next();
 		},
 		beforeRouteEnter(to, from, next) {
-			next((vm) => {
-				vm.$nextTick(() => {
-					const container = vm.getScrollContainer();
-					if (container) {
-						let lastScrollPos = vm.scrollStore.getScrollPosition(vm.scrollPosName);
-						container.scrollTo(0, lastScrollPos);
-					}
-				});
-			});
+			restoreScrollPositionOnEnter(to, from, next);
 		},
 	}
 </script>
