@@ -18,14 +18,14 @@ export const useScrollStore = defineStore('scroll', {
 	},
 })
 
-export function saveScrollPositionBeforeLeave(vm) {
+export function recordScrollPosition(vm) {
 	const container = getScrollContainer(vm)
 	if (container) {
 		vm.scrollStore.saveScrollPosition(vm.scrollPosName, container.scrollTop)
 	}
 }
 
-export function restoreScrollPositionOnEnter(to, from, next) {
+export function restoreScrollPosition(to, from, next) {
 	next((vm) => {
 		vm.$nextTick(() => {
 			const container = getScrollContainer(vm)
