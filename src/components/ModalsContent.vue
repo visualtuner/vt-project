@@ -121,8 +121,6 @@
 				</ButtonItem>
 			</template>
 		</ModalItem>
-
-
 	</div>
 </template>
 <script>
