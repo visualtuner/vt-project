@@ -54,7 +54,7 @@
 	}
 
 	swiper-container::part(container) {
-		padding: 24px 20px;
+		padding: 24px;
 		box-sizing: border-box;
 		overflow: visible
 	}
