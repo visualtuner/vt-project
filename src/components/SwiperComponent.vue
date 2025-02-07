@@ -1,7 +1,7 @@
 // SwiperComponent.vue
 <template>
-	<swiper-container class="test-swiper" :slides-per-view="1" :space-between="spaceBetween" :centered-slides="true"
-		:pagination="{
+	<swiper-container class="test-swiper" :slides-per-view="1" speed="300" :space-between="spaceBetween"
+		:centered-slides="true" :pagination="{
 			hideOnClick: true
 		}" :breakpoints="{
 			768: {
@@ -74,6 +74,6 @@
 		height: 200px;
 		background: #fff;
 		border-radius: 12px;
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 	}
 </style>
