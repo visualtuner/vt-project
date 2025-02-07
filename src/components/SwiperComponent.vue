@@ -47,11 +47,14 @@
 
 <style scoped>
 	swiper-container {
-		width: 100%;
+		width: auto;
+		overflow: hidden;
+		margin-left: -20px;
+		margin-right: -20px;
 	}
 
 	swiper-container::part(container) {
-		padding: 24px 16px;
+		padding: 24px 20px;
 		box-sizing: border-box;
 		overflow: visible
 	}
