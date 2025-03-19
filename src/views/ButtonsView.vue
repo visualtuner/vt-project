@@ -1,6 +1,12 @@
 <template>
 	<div class="view buttons">
-		<HeaderItem :title="pageTitle" class="transform-header"></HeaderItem>
+		<HeaderItem :title="pageTitle" class="transform-header">
+			<template #left>
+				<ButtonItem class="btn-shape-round" @click="$router.back()">
+					<span class="material-symbols-outlined btn-icon size-28">arrow_back</span>
+				</ButtonItem>
+			</template>
+		</HeaderItem>
 		<div class="content-container">
 			<Suspense>
 				<template #default>

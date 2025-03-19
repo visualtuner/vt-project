@@ -1,9 +1,14 @@
 <template>
 	<header id="header" :class="{ 'is-root': isRoot }">
-		<ButtonItem v-if="!isRoot" class="btn-shape-round" @click="$router.back()">
-			<span class="material-symbols-outlined btn-icon size-28">arrow_back</span>
-		</ButtonItem>
-		<h1>{{ title }}</h1>
+		<div class="left-area">
+			<slot name="left"></slot>
+		</div>
+		<div class="center-area">
+			<h1>{{ title }}</h1>
+		</div>
+		<div class="right-area">
+			<slot name="right"></slot>
+		</div>
 	</header>
 </template>
 
@@ -76,10 +81,34 @@
 		transition: box-shadow 0.3s ease;
 	}
 
+	#header .left-area {
+		flex: none;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+
+	#header .center-area {
+		flex: 1 0 0;
+		min-width: 0;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		padding: 0 4px;
+	}
+
+	#header .right-area {
+		flex: none;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		margin: 0 0 0 auto;
+	}
+
 	#header h1 {
 		font-size: 16px;
 		font-weight: 700;
-		padding: 0 4px;
+		padding: 0;
 		margin: 0;
 	}
 
@@ -93,6 +122,9 @@
 
 	#header.is-root h1 {
 		font-size: 18px;
+	}
+
+	#header .left-area:not(:has(*))~.center-area {
 		padding-left: 12px;
 	}
 </style>

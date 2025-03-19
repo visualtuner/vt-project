@@ -1,6 +1,12 @@
 <template>
 	<div class="view root about">
-		<HeaderItem :title="pageTitle" :isRoot="true" class="transform-header"></HeaderItem>
+		<HeaderItem :title="pageTitle" :isRoot="true" class="transform-header">
+			<template #right>
+				<ButtonItem class="btn-shape-round">
+					<span class="material-symbols-outlined btn-icon size-28">more_vert</span>
+				</ButtonItem>
+			</template>
+		</HeaderItem>
 		<div class="content-container">
 			<Suspense>
 				<template #default>
