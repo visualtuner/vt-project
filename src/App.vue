@@ -1,10 +1,12 @@
 <script>
 	import GlobalNav from '@/components/GlobalNav.vue'
 	import GlobalModals from '@/components/GlobalModals.vue'
+	import NavDrawer from '@/components/NavDrawer.vue'
 	export default {
 		components: {
 			GlobalNav,
 			GlobalModals,
+			NavDrawer,
 		},
 	}
 </script>
@@ -21,10 +23,10 @@
 
 		<GlobalNav />
 	</div>
-	<div id="layer-sub"></div>
 
-	<div id="layer-modal">
+	<div id="layer-cover">
 		<GlobalModals />
+		<NavDrawer />
 	</div>
 </template>
 

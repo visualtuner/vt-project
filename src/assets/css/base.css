@@ -25,6 +25,7 @@
     --layer-z-index-gnb: 10;
     --layer-z-index-sub: 100;
     --layer-z-index-modal: 200;
+    --layer-z-index-drawer: 300;
 }
 
 /* semantic color variables for this project */

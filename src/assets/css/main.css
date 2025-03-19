@@ -15,8 +15,7 @@
     scrollbar-width: none;
 }
 
-#layer-main,
-#layer-sub {
+#layer-main {
     display: block;
     width: 100%;
     height: 100%;
@@ -28,18 +27,26 @@
     overflow: hidden;
     scrollbar-width: none;
     pointer-events: none;
-}
-
-#layer-main {
     z-index: 0;
 }
 
-#layer-sub {
-    z-index: 2000;
+#layer-main * {
+    pointer-events: auto;
 }
 
-:is(#layer-main, #layer-sub) * {
-    pointer-events: auto;
+#layer-cover {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    scrollbar-width: none;
+    pointer-events: none;
+    z-index: 1;
 }
 
 .view {
