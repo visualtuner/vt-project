@@ -64,6 +64,7 @@
 	swiper-container::part(bullet-active) {
 		width: 4px;
 		height: 4px;
+		background: var(--vt-c-primary);
 	}
 
 	.card {
