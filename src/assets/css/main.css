@@ -123,13 +123,13 @@
     box-shadow: inset 0 0 0 1px var(--border-color);
 }
 
-.btn-item * {
-    user-select: none;
-    pointer-events: none;
+.btn-item :is(*, *:before, *:after) {
+    user-select: none !important;
+    pointer-events: none !important;
 }
 
 .btn-item:is(:disabled, .disabled) {
-    pointer-events: none;
+    pointer-events: none !important;
     opacity: 0.3;
 }
 
