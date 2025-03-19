@@ -175,6 +175,7 @@
 
 .btn-item .btn-txt {
     display: inline-block;
+    line-height: 1;
 }
 
 .btn-size-xs {
@@ -206,7 +207,7 @@
 }
 
 .btn-shape-fillet {
-    border-radius: calc(var(--btn-size) / 8);
+    border-radius: calc(var(--btn-size) / 4);
 }
 
 .btn-shape-round {

@@ -1,13 +1,6 @@
-// SwiperComponent.vue
 <template>
 	<swiper-container class="test-swiper" :slides-per-view="1" speed="300" :space-between="spaceBetween"
-		:centered-slides="true" :pagination="{
-			hideOnClick: true
-		}" :breakpoints="{
-			768: {
-				slidesPerView: 2,
-			},
-		}" @swiperprogress="onProgress" @swiperslidechange="onSlideChange">
+		:centered-slides="true" :pagination="true" @swiperprogress="onProgress" @swiperslidechange="onSlideChange">
 		<!-- <swiper-slide class="card" v-for="n in 6" :key="n">Slide {{ n }}</swiper-slide> -->
 		<swiper-slide class="card">Slide 1</swiper-slide>
 		<swiper-slide class="card">Slide 2</swiper-slide>
@@ -29,7 +22,7 @@
 
 			const onProgress = (e) => {
 				const [swiper, progress] = e.detail;
-				console.log(progress);
+				console.log(swiper, progress);
 			};
 
 			const onSlideChange = (e) => {
