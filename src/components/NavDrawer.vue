@@ -11,7 +11,7 @@
 				</template>
 			</HeaderItem>
 		</swiper-slide>
-		<swiper-slide class="dummy">Slide 2</swiper-slide>
+		<swiper-slide class="dummy"></swiper-slide>
 	</swiper-container>
 </template>
 
