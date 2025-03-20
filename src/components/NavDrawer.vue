@@ -42,16 +42,6 @@
 			};
 
 			onMounted(() => {
-
-				// const swiperContainer = document.querySelector('.nav-drawer-swiper');
-				// if (swiperContainer) {
-				// 	console.log("있어");
-				// 	swiperContainer.addEventListener('swiperinit', (event) => {
-				// 		navDrawerStore.setSwiperInstance(event.detail[0]); // Swiper 인스턴스 저장
-				// 		console.log("인잇");
-				// 	});
-				// }
-
 				window.addEventListener('popstate', handlePopState);
 			});
 
@@ -70,12 +60,12 @@
 			};
 
 			const onSlideChange = (e) => {
-				const [swiper, progress] = e.detail;
-				console.log(swiper.activeIndex);
+				const [swiper] = e.detail;
+
 				if (swiper.activeIndex === 0) {
-					isOpen.value = true;
+					navDrawerStore.open();
 				} else {
-					isOpen.value = false;
+					navDrawerStore.close();
 				}
 			};
 
