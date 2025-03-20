@@ -51,8 +51,22 @@
 			});
 
 			const onInit = (e) => {
-				console.log("초기화");
-				navDrawerStore.setSwiperInstance(e.detail[0]); // Swiper 인스턴스 저장
+				const swiper = e.detail[0];
+				navDrawerStore.setSwiperInstance(swiper);
+
+				const dim = document.querySelector('.nav-drawer-dim');
+
+				swiper.on('touchStart', () => {
+					if (dim) dim.classList.add('dragging');
+				});
+
+				swiper.on('touchEnd', () => {
+					if (dim) dim.classList.remove('dragging');
+				});
+
+				swiper.on('transitionEnd', () => {
+					if (dim) dim.classList.remove('dragging');
+				});
 			};
 
 			const onProgress = (e) => {
@@ -117,6 +131,11 @@
 		padding: 0;
 		background: rgba(0, 0, 0, 0.6);
 		opacity: 0;
+		transition: opacity 0.2s ease-out;
+	}
+
+	.nav-drawer-dim.dragging {
+		transition: none;
 	}
 
 	.nav-drawer-swiper .panel {
