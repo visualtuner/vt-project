@@ -1,8 +1,8 @@
 <template>
 	<div class="nav-drawer-dim"></div>
-	<swiper-container class="nav-drawer-swiper" :slides-per-view="1" speed="200" :centered-slides="true"
-		:pagination="false" :initial-slide="1" @swiperprogress="onProgress" @swiperslidechange="onSlideChange"
-		@swiperinit="onInit">
+	<swiper-container class="nav-drawer-swiper" :slides-per-view="1" :resistance-ratio="0" speed="200"
+		:centered-slides="true" :pagination="false" :initial-slide="1" @swiperprogress="onProgress"
+		@swiperslidechange="onSlideChange" @swiperinit="onInit">
 		<swiper-slide class="panel">
 			<HeaderItem :title="pageTitle" class="transform-header">
 				<template #right>
