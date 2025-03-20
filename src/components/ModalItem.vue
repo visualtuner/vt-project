@@ -73,6 +73,7 @@
 		justify-content: center;
 		align-items: center;
 		z-index: var(--layer-z-index-modal);
+		pointer-events: auto;
 	}
 
 	.modal-backdrop[data-backdrop-color="transparent"] {

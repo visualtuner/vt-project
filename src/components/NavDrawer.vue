@@ -18,7 +18,7 @@
 
 <script>
 	import { register } from 'swiper/element/bundle';
-	import { nextTick, defineComponent, computed, onMounted, onUnmounted } from 'vue';
+	import { defineComponent, computed, onMounted, onUnmounted } from 'vue';
 	import { useNavDrawerStore } from '@/stores/navDrawerStore';
 	import HeaderItem from '@/components/HeaderItem.vue';
 
