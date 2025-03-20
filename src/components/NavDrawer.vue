@@ -1,5 +1,6 @@
 <template>
-	<swiper-container class="nav-drawer-swiper" :slides-per-view="1" speed="300" :centered-slides="true"
+	<div class="nav-drawer-dim"></div>
+	<swiper-container class="nav-drawer-swiper" :slides-per-view="1" speed="200" :centered-slides="true"
 		:pagination="false" :initial-slide="1" @swiperprogress="onProgress" @swiperslidechange="onSlideChange"
 		@swiperinit="onInit">
 		<swiper-slide class="panel">
@@ -57,6 +58,12 @@
 			const onProgress = (e) => {
 				const [swiper, progress] = e.detail;
 				console.log(swiper, progress);
+
+				const dim = document.querySelector('.nav-drawer-dim');
+				console.log(dim);
+				if (dim) {
+					dim.style.opacity = (1 - progress).toFixed(2);
+				}
 			};
 
 			const onSlideChange = (e) => {
@@ -94,6 +101,22 @@
 		scrollbar-width: none;
 		pointer-events: none;
 		z-index: 0;
+	}
+
+	.nav-drawer-dim {
+		display: block;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: 0;
+		padding: 0;
+		background: rgba(0, 0, 0, 0.6);
+		opacity: 0;
 	}
 
 	.nav-drawer-swiper .panel {
