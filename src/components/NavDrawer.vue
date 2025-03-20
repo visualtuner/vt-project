@@ -1,10 +1,11 @@
 <template>
 	<swiper-container class="nav-drawer-swiper" :slides-per-view="1" speed="300" :centered-slides="true"
-		:pagination="false" @swiperprogress="onProgress" @swiperslidechange="onSlideChange">
+		:pagination="false" :initial-slide="1" @swiperprogress="onProgress" @swiperslidechange="onSlideChange"
+		@swiperinit="onInit">
 		<swiper-slide class="panel">
 			<HeaderItem :title="pageTitle" class="transform-header">
 				<template #right>
-					<ButtonItem class="btn-shape-round" @click="$router.back()">
+					<ButtonItem class="btn-shape-round" @click="closeDrawer">
 						<span class="material-symbols-outlined btn-icon size-28">close</span>
 					</ButtonItem>
 				</template>
@@ -16,7 +17,8 @@
 
 <script>
 	import { register } from 'swiper/element/bundle';
-	import { defineComponent } from 'vue';
+	import { nextTick, defineComponent, computed, onMounted, onUnmounted } from 'vue';
+	import { useNavDrawerStore } from '@/stores/navDrawerStore';
 	import HeaderItem from '@/components/HeaderItem.vue';
 
 	register();
@@ -25,7 +27,42 @@
 		components: {
 			HeaderItem,
 		},
+		data() {
+			return {
+				pageTitle: '메뉴',
+			};
+		},
 		setup() {
+			const navDrawerStore = useNavDrawerStore();
+			const isOpen = computed(() => navDrawerStore.isOpen);
+
+
+			const handlePopState = () => {
+				navDrawerStore.close();
+			};
+
+			onMounted(() => {
+
+				// const swiperContainer = document.querySelector('.nav-drawer-swiper');
+				// if (swiperContainer) {
+				// 	console.log("있어");
+				// 	swiperContainer.addEventListener('swiperinit', (event) => {
+				// 		navDrawerStore.setSwiperInstance(event.detail[0]); // Swiper 인스턴스 저장
+				// 		console.log("인잇");
+				// 	});
+				// }
+
+				window.addEventListener('popstate', handlePopState);
+			});
+
+			onUnmounted(() => {
+				window.removeEventListener('popstate', handlePopState);
+			});
+
+			const onInit = (e) => {
+				console.log("초기화");
+				navDrawerStore.setSwiperInstance(e.detail[0]); // Swiper 인스턴스 저장
+			};
 
 			const onProgress = (e) => {
 				const [swiper, progress] = e.detail;
@@ -33,12 +70,22 @@
 			};
 
 			const onSlideChange = (e) => {
-				console.log('slide changed');
+				const [swiper, progress] = e.detail;
+				console.log(swiper.activeIndex);
+				if (swiper.activeIndex === 0) {
+					isOpen.value = true;
+				} else {
+					isOpen.value = false;
+				}
 			};
 
 			return {
+				isOpen,
+				openDrawer: navDrawerStore.open,
+				closeDrawer: navDrawerStore.close,
 				onProgress,
 				onSlideChange,
+				onInit,
 			};
 		},
 	});
@@ -62,6 +109,7 @@
 	.nav-drawer-swiper .panel {
 		background: var(--color-background);
 		pointer-events: all;
+		overflow: hidden;
 	}
 
 	.nav-drawer-swiper .dummy {

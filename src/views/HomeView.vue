@@ -2,7 +2,7 @@
 	<div class="view root">
 		<HeaderItem :title="pageTitle" :isRoot="true" class="transform-header">
 			<template #left>
-				<ButtonItem class="btn-shape-round">
+				<ButtonItem class="btn-shape-round" @click="$navdrawer.open()">
 					<span class="material-symbols-outlined btn-icon size-28">menu</span>
 				</ButtonItem>
 			</template>
