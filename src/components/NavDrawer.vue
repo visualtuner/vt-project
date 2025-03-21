@@ -1,8 +1,9 @@
 <template>
-	<div class="nav-drawer-dim"></div>
-	<swiper-container class="nav-drawer-swiper" :slides-per-view="1" :resistance-ratio="0" speed="200"
-		:centered-slides="true" :pagination="false" :initial-slide="1" @swiperprogress="onProgress"
-		@swiperslidechange="onSlideChange" @swiperinit="onInit">
+	<swiper-container class="nav-drawer-swiper" dir="rtl" :slides-per-view="1" :resistance-ratio="0" speed="200"
+		:centered-slides="true" :pagination="false" @swiperprogress="onProgress" @swiperslidechange="onSlideChange"
+		@swiperinit="onInit">
+		<div class="nav-drawer-dim"></div>
+		<swiper-slide class="dummy"></swiper-slide>
 		<swiper-slide class="panel">
 			<HeaderItem :title="pageTitle" class="transform-header">
 				<template #right>
@@ -12,7 +13,6 @@
 				</template>
 			</HeaderItem>
 		</swiper-slide>
-		<swiper-slide class="dummy"></swiper-slide>
 	</swiper-container>
 </template>
 
@@ -76,7 +76,7 @@
 				const dim = document.querySelector('.nav-drawer-dim');
 				console.log(dim);
 				if (dim) {
-					dim.style.opacity = (1 - progress).toFixed(2);
+					dim.style.opacity = progress;
 				}
 			};
 
@@ -84,9 +84,9 @@
 				const [swiper] = e.detail;
 
 				if (swiper.activeIndex === 0) {
-					navDrawerStore.open();
-				} else {
 					navDrawerStore.close();
+				} else {
+					navDrawerStore.open();
 				}
 			};
 
@@ -142,6 +142,7 @@
 		background: var(--color-background);
 		pointer-events: all;
 		overflow: hidden;
+		direction: ltr;
 	}
 
 	.nav-drawer-swiper .dummy {

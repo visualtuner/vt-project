@@ -20,7 +20,7 @@ export const useNavDrawerStore = defineStore('navdrawer', {
 			history.pushState(updatedState, '', location.href)
 
 			if (this.swiperInstance) {
-				this.swiperInstance.slideTo(0) // 첫 번째 슬라이드로 이동
+				this.swiperInstance.slideTo(1) // 첫 번째 슬라이드로 이동
 			}
 		},
 		close() {
@@ -34,7 +34,7 @@ export const useNavDrawerStore = defineStore('navdrawer', {
 			}
 
 			if (this.swiperInstance) {
-				this.swiperInstance.slideTo(1) // 두 번째 슬라이드로 이동 (닫기)
+				this.swiperInstance.slideTo(0) // 두 번째 슬라이드로 이동 (닫기)
 			}
 		},
 		handleBackNavigation() {
