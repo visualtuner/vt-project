@@ -38,7 +38,7 @@
       "density": "4.0"
     }
   ],
-  "display": "fullscreen",
+  "display": "standalone",
   "start_url": "/",
   "description": "Visual Tuner",
   "background_color": "white",
