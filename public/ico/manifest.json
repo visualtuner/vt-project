@@ -36,6 +36,16 @@
       "sizes": "192x192",
       "type": "image\/png",
       "density": "4.0"
+    },
+    {
+      "src": "\/android-icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image\/png"
+    },
+    {
+      "src": "\/android-icon-1024x1024.png",
+      "sizes": "1024x1024",
+      "type": "image\/png"
     }
   ],
   "display": "standalone",
@@ -43,6 +53,6 @@
   "description": "Visual Tuner",
   "background_color": "white",
   "short_name": "VT",
-  "theme_color": "#FFBC00",
+  "theme_color": "#FFF",
   "orientation": "portrait"
 }
